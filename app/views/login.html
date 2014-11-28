@@ -1,0 +1,22 @@
+<form class="form" name="loginForm" ng-submit="login">
+
+  <div class="form-group" >
+    <label for="">Username</label>
+    <input type="text" name="user" class="form-control" ng-model="user.name" />
+  </div>
+
+  <div class="form-group">
+    <label for="">Password</label>
+    <input type="password" name="password" class="form-control" ng-model="user.password" />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" name="email" class="btn btn-primary" > Log in </button>
+  </div>
+
+
+</form>
+
+
+<!--ng-class="{has-error : loginForm.email.$invalid && loginForm.email.$dirty, 'has-sucess : loginForm.email.$ valid && loginForm.email.$dirty'}"-->
+<p class="help-block" ng-show="loginForm.email.$invalid && loginForm.email.$dirty && loginForm.email.submitted"></p>
