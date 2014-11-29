@@ -5,6 +5,6 @@ angular.module('swFrontApp')
 		return {
 			restrict: 'E',
 			templateUrl: 'views/task.html',
-			controller: 'PanelCtrl'
+			controller: 'TaskCtrl'
 		}
 	})

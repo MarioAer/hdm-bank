@@ -8,6 +8,13 @@
  * Controller of the swFrontApp
  */
 angular.module('swFrontApp')
-  .controller('MainCtrl', function ($scope) {
-    
+  .controller('MainCtrl', function ($scope, $location) {
+
+  })
+  .controller('NavCtrl', function ($scope, $location) {
+
+    $scope.isActive = function (path) {
+      return path === $location.path();
+    };
+
   });
