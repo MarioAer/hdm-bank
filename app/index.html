@@ -41,13 +41,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li ng-class="{active:isActive('/')}"><a href="#">Home</a></li>
-            <li ng-class="{active:isActive('/account')}"><a href="#">Account</a></li>
-            <li ng-class="{active:isActive('/transfer')}"><a href="#">Transfers</a></li>
-            <li ng-class="{active:isActive('/order')}"><a href="#">Standing Order</a></li>
+            <li ng-class="{active:isActive('/')}"><a href="#/">Home</a></li>
+            <li ng-class="{active:isActive('/account')}"><a href="#/account">Account</a></li>
+            <li ng-class="{active:isActive('/transfer')}"><a href="#/transfer">Transfers</a></li>
+            <li ng-class="{active:isActive('/order')}"><a href="#/order">Standing Order</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li ng-class="{active:isActive('/help')}"><a href="/help">Help</a></li>
+            <li ng-class="{active:isActive('/help')}"><a href="#/help">Help</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -90,6 +90,10 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/help.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/account.js"></script>
+        <script src="scripts/controllers/transfer.js"></script>
+        <script src="scripts/controllers/order.js"></script>
+        <script src="scripts/controllers/help.js"></script>
         <!-- endbuild -->
 </body>
 </html>
