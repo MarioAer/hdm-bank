@@ -47,7 +47,7 @@ angular
       'TRANSFER1_DESC' : 'Choose the person to whom you want to send the money',
       // transfer 2
       'TRANSFER2_ACTION' : 'Transfer : Second Step',
-      'TRANSFER2_HEADER' : 'How much do you want to transfer to {{transfer_recipient}}?',
+      'TRANSFER2_HEADER' : 'How much do you want to transfer to {{recipient}}?',
       'TRANSFER2_DESC' : 'Select the money amount you want to transfer, this amount will be will not be available to you afterwards',
       'TRANSFER2_INPUT' : 'type amount',
       // transfer 3
@@ -57,17 +57,17 @@ angular
       'TRANSFER3_SEL_OK' : 'Yes',
       'TRANSFER3_SEL_BAD' : 'No',
       'TRANSFER3_PAUSE' : 'Hold transfer - Print a copy for verification',
-      // transfer 3
+      // transfer 4
       'TRANSFER4_ACTION' : 'Transfer : Forth Step',
       'TRANSFER4_HEADER' : 'Security Code',
       'TRANSFER4_DESC' : 'Type your security PIN, the bank has send a PIN Code to you phone',
       'TRANSFER4_INPUT' : 'Type your PIN',
-      //transfer 4
+      //transfer 5
       'TRANSFER5_ACTION' : 'Transfer : Success',
       'TRANSFER5_HEADER' : 'The information bellow is important',
       'TRANSFER5_DESC' : 'You have sent the money to the other person',
-      'TRANSFER5_MSG1' : 'Your Transfer was completed : {{transfer_recipient}} {{transfer_amount | currency:"EUR"}}',
-      'TRANSFER5_MSG2' : 'You have so much money left : {{transfer_left | curreny:"EUR"}}',
+      'TRANSFER5_MSG1' : 'Your Transfer was completed : {{recipient}} {{amount | currency:"&euro;"}}',
+      'TRANSFER5_MSG2' : 'You have so much money left : {{left | currency:"&euro;"}}',
       'TRANSFER5_ACTION1' : 'Go to Account',
       'TRANSFER5_ACTION2' : 'Print transfer confirmation'
     });
@@ -98,7 +98,7 @@ angular
       'TRANSFER1_DESC' : 'Wählen Sie die Person, wem möchten Sie das Geld überweisen.',
       // transfer 2
       'TRANSFER2_ACTION' : 'Überweisung : Zweiter Schritt',
-      'TRANSFER2_HEADER' : 'Wieviel Geld möchten {{transfer_recipient}} geben?',
+      'TRANSFER2_HEADER' : 'Wieviel Geld möchten {{recipient}} geben?',
       'TRANSFER2_DESC' : 'Wählen Sie den Betrag, den Sie überweisen möchten.',
       'TRANSFER2_INPUT' : 'Geldbetrag eintippen',
       // transfer 3
@@ -117,15 +117,15 @@ angular
       'TRANSFER5_ACTION' : 'Überweisung : Bestätigung',
       'TRANSFER5_HEADER' : 'Die Überweisung wurde ausgeführt',
       'TRANSFER5_DESC' : 'Die Überweisung wurde ausgeführt, folgende Informationen sind wichtig',
-      'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{transfer_recipient}} {{transfer_amount | currency:"EUR"}}',
-      'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{transfer_left | curreny:"EUR"}} auf Ihrem Konto.',
+      'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{recipient}} {{amount | currency:"&euro;"}}',
+      'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"&euro;"}} auf Ihrem Konto.',
       'TRANSFER5_ACTION1' : 'Zum Kontostand',
       'TRANSFER5_ACTION2' : 'Bestätigung ausdrucken'
     });
 
     $translateProvider.preferredLanguage('en');
   }])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -153,6 +153,6 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      });
+      })
 
   });

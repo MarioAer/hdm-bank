@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>HdM Bank</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -22,8 +22,8 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <button type="button" class="sout-btn btn btn-danger navbar-btn pull-right">Sign out</button>
-      <h3 class="text-muted">HdM Bank</h3>
+      <button type="button" class="sout-btn btn btn-danger navbar-btn pull-right" translate="SIGNOUT">Sign out</button>
+      <h3>HdM Bank</h3>
 
     <nav class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
       <div class="container-fluid">
@@ -60,10 +60,10 @@
 
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-warning-sign"></span> Work in Progress</p>
         <ul ng-controller="LangCtrl">
-          <li><a href="#" ng-click="changeLang('en')">English</a></li>
-          <li><a href="#" ng-click="changeLang('de')">German</a></li>
+          <button ng-click="changeLanguage('de')"> DE </button>
+          <button ng-click="changeLanguage('en')"> EN </button>
         </ul>
       </div>
     </div>
@@ -74,6 +74,8 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
+
+    <script scr="scripts/data.json"></script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -101,6 +103,7 @@
         <script src="scripts/controllers/transfer.js"></script>
         <script src="scripts/controllers/order.js"></script>
         <script src="scripts/controllers/help.js"></script>
+        <script src="scripts/directives/directives.js"></script>
         <!-- endbuild -->
 </body>
 </html>

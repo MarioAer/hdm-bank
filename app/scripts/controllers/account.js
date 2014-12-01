@@ -9,9 +9,10 @@
  */
 angular.module('swFrontApp')
   .controller('AccountCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    angular.element('.sout-btn').show();
+    $scope.account = {
+      amount : '540.50'
+    }
+
   });

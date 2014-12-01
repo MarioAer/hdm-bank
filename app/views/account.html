@@ -1,6 +1,22 @@
-<div class="panel panel-default">
-  <div class="panel-heading">Account</div>
-  <div class="panel-body">
-    Panel content
+<div class="transfert-step0">
+  <h4 translate="ACCOUNT_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading"> {{ 'BALANCE' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+      <table class="table">
+        <tr>
+          <td translate="BALANCE_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-6 text-center"> {{ account.amount | currency:"&euro;" }}</div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

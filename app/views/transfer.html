@@ -1,6 +1,216 @@
-<div class="panel panel-default">
-  <div class="panel-heading">Account</div>
-  <div class="panel-body">
-    Panel content
+<div class="transfer-step0" >
+  <h4 translate="TRANSFER_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading"> {{ 'TRANSFER_HEADER' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc0 = !desc0"></span></div>
+      <table class="table" ng-show="desc0">
+        <tr>
+          <td translate="TRANSFER_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-6" translate="TRANSFER_DESC"></div>
+            <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-8">
+              <button type="button" class="btn btn-default" ng-click="startTransfer()"
+                      translate="START_TRANSFER_BUTTON"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="transfer-step1" style="display: none;">
+  <h4 translate="TRANSFER1_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading"> {{ 'TRANSFER1_HEADER' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc1 = !desc1"></span></div>
+      <table class="table" ng-show="desc1">
+        <tr>
+          <td translate="TRANSFER1_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-6" ng-repeat="recipient in recipients" ng-class="{ selected: $index == selectedIndex }" ng-click="itemClicked($index)"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{recipient.name}} </div>
+            <div class="col-md-6"> TRANSLATE NEW REC. </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="cancelTransfer()" translate="TRANSFER_CANCEL"></button>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" ng-disabled="recipientCheck" translate="TRANSFER_NEXT"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="transfer-step2" style="display: none;">
+  <h4 translate="TRANSFER2_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading" translate="TRANSFER2_HEADER" translate-values="{ recipient : transferData.recipient}"><span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc2 = !desc2"></span></div>
+      <table class="table" ng-show="desc2">
+        <tr>
+          <td translate="TRANSFER2_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" only-digits ng-change="amountTyped()" placeholder="{{ 'TRANSFER2_INPUT' | translate  }}">
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="cancelTransfer()" translate="TRANSFER_CANCEL"></button>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()"  translate="TRANSFER_NEXT" ng-disabled="amountCheck"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="transfer-step3" style="display: none;">
+  <h4 translate="TRANSFER3_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading"> {{ 'TRANSFER3_HEADER' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc3 = !desc3"></span></div>
+      <table class="table" ng-show="desc3">
+        <tr>
+          <td translate="TRANSFER3_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-9"></div>
+            <div class="col-md-1"><button type="button" class="btn btn-default" translate="TRANSFER3_SEL_OK"></button></div>
+            <div class="col-md-1"><button type="button" class="btn btn-default" translate="TRANSFER3_SEL_BAD"></button></div>
+          </div>
+          <div class="row">
+            <div class="col-md-9"></div>
+            <div class="col-md-1"><button type="button" class="btn btn-default" translate="TRANSFER3_SEL_OK"></button></div>
+            <div class="col-md-1"><button type="button" class="btn btn-default" translate="TRANSFER3_SEL_BAD"></button></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="cancelTransfer()" translate="TRANSFER_CANCEL"></button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" translate="TRANSFER3_PAUSE"></button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" translate="TRANSFER_NEXT"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="transfer-step4" style="display: none;">
+  <h4 translate="TRANSFER4_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading"> {{ 'TRANSFER4_HEADER' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc4 = !desc4"></span></div>
+      <table class="table" ng-show="desc4">
+        <tr>
+          <td translate="TRANSFER4_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="number" class="form-control" placeholder="{{ 'TRANSFER4_INPUT' | translate  }}">
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="cancelTransfer()" translate="TRANSFER_CANCEL"></button>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" translate="TRANSFER_NEXT"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="transfer-step5" style="display: none;">
+  <h4 translate="TRANSFER5_ACTION"></h4>
+
+  <div class="well">
+    <div class="panel panel-default">
+      <div class="panel-heading"> {{ 'TRANSFER5_HEADER' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc5 = !desc5"></span></div>
+      <table class="table" ng-show="desc5">
+        <tr>
+          <td translate="TRANSFER5_DESC"></td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <div class=".container-fluid">
+          <div class="row">
+            <div class="col-md-12" translate="TRANSFER5_MSG1" translate-values="{ recipient : transferData.recipient, amount : transferData.amount}"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" translate="TRANSFER5_MSG2" translate-values="{ left : transferData.left }"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" aria-label="{{ 'TRANSFER5_ACTION2' | translate }}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTION2' | translate }}</button>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-default" aria-label="{{ 'TRANSFER5_ACTION1' | translate }}" ng-click="go('/account')"><span class="glyphicon glyphicon-euro" aria-hidden="true"></span> {{ 'TRANSFER5_ACTION1' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<form name="newContact" novalidate class="">-->
+
+  <!--<form-field recored="contact" field="firstName" live="false" required="true"></form-field>-->
+
+
+  <!--<div class="row form-group">-->
+    <!--<div class="col-sm-offset-2">-->
+      <!--<button class="btn btn-primary" ng-click="save()"> Create Contact</button>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+<!--</form>-->

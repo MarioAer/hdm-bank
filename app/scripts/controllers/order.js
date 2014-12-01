@@ -9,6 +9,9 @@
  */
 angular.module('swFrontApp')
   .controller('OrderCtrl', function ($scope) {
+
+    angular.element('.sout-btn').show();
+
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

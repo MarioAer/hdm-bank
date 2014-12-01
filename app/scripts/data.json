@@ -1,0 +1,35 @@
+{
+  "hdm_bank_data" : {
+
+    "recipients" : [
+      {
+        "name" : "Julia Müller",
+        "accountNumber": "055123",
+        "bankName": "Deutsche Bank",
+        "IBAN": "",
+        "photo": "/img/julia.png"
+      },
+      {
+        "name" : "Strom - EnBW",
+        "accountNumber": "055343",
+        "bankName": "Deutsche Bank",
+        "IBAN": "",
+        "photo": "/img/strom.png"
+      },
+      {
+        "name" : "Handy - Telekom",
+        "accountNumber": "055165",
+        "bankName": "Deutsche Bank",
+        "IBAN": "",
+        "photo": "/img/handy.png"
+      },
+      {
+        "name" : "Laura Fisher",
+        "accountNumber": "055134",
+        "bankName": "Deutsche Bank",
+        "IBAN": "",
+        "photo": "/img/laura.png"
+      }
+    ]
+  }
+}

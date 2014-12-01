@@ -9,6 +9,7 @@
  */
 angular.module('swFrontApp')
   .controller('HelpCtrl', function ($scope) {
+    angular.element('.sout-btn').show();
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
