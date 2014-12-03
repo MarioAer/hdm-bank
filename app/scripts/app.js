@@ -66,8 +66,8 @@ angular
       'TRANSFER5_ACTION' : 'Transfer : Success',
       'TRANSFER5_HEADER' : 'The information bellow is important',
       'TRANSFER5_DESC' : 'You have sent the money to the other person',
-      'TRANSFER5_MSG1' : 'Your Transfer was completed : {{recipient}} {{amount | currency:"&euro;"}}',
-      'TRANSFER5_MSG2' : 'You have so much money left : {{left | currency:"&euro;"}}',
+      'TRANSFER5_MSG1' : 'Your Transfer was completed : {{recipient}} {{amount | currency:"EUR"}}',
+      'TRANSFER5_MSG2' : 'You have so much money left : {{left | currency:"EUR"}}',
       'TRANSFER5_ACTION1' : 'Go to Account',
       'TRANSFER5_ACTION2' : 'Print transfer confirmation'
     });
@@ -117,8 +117,8 @@ angular
       'TRANSFER5_ACTION' : 'Überweisung : Bestätigung',
       'TRANSFER5_HEADER' : 'Die Überweisung wurde ausgeführt',
       'TRANSFER5_DESC' : 'Die Überweisung wurde ausgeführt, folgende Informationen sind wichtig',
-      'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{recipient}} {{amount | currency:"&euro;"}}',
-      'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"&euro;"}} auf Ihrem Konto.',
+      'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{recipient}} {{amount | currency:"EUR"}}',
+      'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"EUR"}} auf Ihrem Konto.',
       'TRANSFER5_ACTION1' : 'Zum Kontostand',
       'TRANSFER5_ACTION2' : 'Bestätigung ausdrucken'
     });

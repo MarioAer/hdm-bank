@@ -14,7 +14,8 @@ angular.module('swFrontApp')
 
     $scope.currentTransferElement;
     $scope.recipientCheck = true;
-    $scope.amountCheck = true;
+    $scope.canceledTrasfer = false;
+    $scope.ammountExcedsBalance = false;
 
     $scope.transferElements = [
       angular.element('.transfer-step0'),
@@ -25,14 +26,6 @@ angular.module('swFrontApp')
       angular.element('.transfer-step5')
     ]
 
-    $scope.recipientData = {
-      name : '',
-      accountNumber : '',
-      bankName : '',
-      IBAN : '',
-      photo: ''
-    }
-
     $scope.transferData = {
       recipient : '',
       amount : '',
@@ -42,9 +35,26 @@ angular.module('swFrontApp')
     $http.get('/scripts/data.json')
       .then(function(res){
         $scope.bankInfo = res.data.hdm_bank_data;
-
+        $scope.accoutnBalance = $scope.bankInfo.account.balance;
         $scope.recipients = $scope.bankInfo.recipients;
       });
+
+    $scope.$watch( 'ammountInput' , function () {
+      if ($scope.transferAmmountForm.transferAmmountInput.$dirty && ! $scope.transferAmmountForm.transferAmmountInput.$error.pattern && !$scope.transferAmmountForm.transferAmmountInput.$error.required) {
+        $scope.transferData.amount = $scope.ammountInput;
+        if ($scope.ammountInput.indexOf(",") > -1) {
+          $scope.transAmmountInput = $scope.ammountInput.replace(',','.');
+        }else {
+          $scope.transAmmountInput = $scope.ammountInput;
+        }
+        if ($scope.accoutnBalance - $scope.transAmmountInput < 0) {
+          $scope.ammountExcedsBalance = true;
+        } else {
+          $scope.ammountExcedsBalance = false;
+        }
+      }
+      }
+    );
 
     $scope.selectedIndex = -1; // Whatever the default selected index is, use -1 for no selection
 
@@ -55,15 +65,6 @@ angular.module('swFrontApp')
       console.log($scope.transferData.recipient)
     };
 
-
-    $scope.amountTyped = function () {
-      $scope.amountCheck = false;
-    }
-
-    $scope.createNewRecipient = function () {
-
-    }
-
     $scope.startTransfer = function () {
       angular.element('.sout-btn').hide();
 
@@ -72,9 +73,9 @@ angular.module('swFrontApp')
 
       $scope.currentTransferElement = 1;
       $scope.recipientCheck = true;
-
+      $scope.canceledTrasfer = false;
+      $scope.ammountInput = '';
     }
-
 
     $scope.nextStepTransfer = function() {
       if ($scope.currentTransferElement != 6){
@@ -103,6 +104,7 @@ angular.module('swFrontApp')
         amount : '',
         left : ''
       }
+      $scope.canceledTrasfer = true;
       $scope.currentTransferElement = 0;
       $scope.recipientCheck = true;
     }
@@ -111,4 +113,5 @@ angular.module('swFrontApp')
       $location.path( path );
     };
 
-});
+  })
+

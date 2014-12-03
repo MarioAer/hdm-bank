@@ -8,11 +8,11 @@ angular.module('swFrontApp')
     };
 
   })
-  .controller('MainCtrl', function ($scope, $location) {
+  .controller('MainCtrl', [ '$scope', '$location', 'myService', function ($scope, $location, myService) {
 
 
 
-  })
+  }])
   .controller('NavCtrl', function ($scope, $location) {
 
     angular.element('.sout-btn').show();

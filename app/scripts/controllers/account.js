@@ -8,11 +8,15 @@
  * Controller of the swFrontApp
  */
 angular.module('swFrontApp')
-  .controller('AccountCtrl', function ($scope) {
+  .controller('AccountCtrl', function ($scope, $http) {
 
     angular.element('.sout-btn').show();
-    $scope.account = {
-      amount : '540.50'
-    }
+
+    $http.get('/scripts/data.json')
+      .then(function(res){
+        $scope.bankInfo = res.data.hdm_bank_data;
+        $scope.accoutnBalance = $scope.bankInfo.account.balance;
+        $scope.recipients = $scope.bankInfo.recipients;
+      });
 
   });

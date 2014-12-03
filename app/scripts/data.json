@@ -1,6 +1,10 @@
 {
   "hdm_bank_data" : {
 
+    "account" : {
+      "balance": "560.45"
+    },
+
     "recipients" : [
       {
         "name" : "Julia Müller",
