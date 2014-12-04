@@ -41,7 +41,6 @@ angular.module('swFrontApp')
 
     $scope.$watch( 'ammountInput' , function () {
       if ($scope.transferAmmountForm.transferAmmountInput.$dirty && ! $scope.transferAmmountForm.transferAmmountInput.$error.pattern && !$scope.transferAmmountForm.transferAmmountInput.$error.required) {
-        $scope.transferData.amount = $scope.ammountInput;
         if ($scope.ammountInput.indexOf(",") > -1) {
           $scope.transAmmountInput = $scope.ammountInput.replace(',','.');
         }else {
@@ -52,6 +51,7 @@ angular.module('swFrontApp')
         } else {
           $scope.ammountExcedsBalance = false;
         }
+        $scope.transferData.amount = $scope.transAmmountInput;
       }
       }
     );
