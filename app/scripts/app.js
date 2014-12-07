@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ngDialog'
   ])
   .config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
@@ -45,6 +46,7 @@ angular
       'TRANSFER1_ACTION' : 'Transfer : First Step',
       'TRANSFER1_HEADER' : 'For whom is the money?',
       'TRANSFER1_DESC' : 'Choose the person to whom you want to send the money',
+      'TRANSFER1_NEW' : 'Add new recipient',
       // transfer 2
       'TRANSFER2_ACTION' : 'Transfer : Second Step',
       'TRANSFER2_HEADER' : 'How much do you want to transfer to {{recipient}}?',
@@ -69,7 +71,10 @@ angular
       'TRANSFER5_MSG1' : 'Your Transfer was completed : {{recipient}} {{amount | currency:"&euro;"}}',
       'TRANSFER5_MSG2' : 'You have so much money left : {{left | currency:"EUR"}}',
       'TRANSFER5_ACTION1' : 'Go to Account',
-      'TRANSFER5_ACTION2' : 'Print transfer confirmation'
+      'TRANSFER5_ACTIONSEL' : 'Keep conformation',
+      'TRANSFER5_ACTIONSEL1' : 'Download to computer',
+      'TRANSFER5_ACTIONSEL2' : 'Send to email',
+      'TRANSFER5_ACTIONSEL3' : 'Print confirmation'
     });
 
     $translateProvider.translations('de', {
@@ -96,6 +101,7 @@ angular
       'TRANSFER1_ACTION' : 'Überweisung : Erster Schritt',
       'TRANSFER1_HEADER' : 'Wem möchten Sie Geld geben?',
       'TRANSFER1_DESC' : 'Wählen Sie die Person, wem möchten Sie das Geld überweisen.',
+      'TRANSFER1_NEW' : 'Neuer Empfänger',
       // transfer 2
       'TRANSFER2_ACTION' : 'Überweisung : Zweiter Schritt',
       'TRANSFER2_HEADER' : 'Wieviel Geld möchten {{recipient}} geben?',
@@ -120,7 +126,10 @@ angular
       'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{recipient}} {{amount | currency:"EUR"}}',
       'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"&euro;"}} auf Ihrem Konto.',
       'TRANSFER5_ACTION1' : 'Zum Kontostand',
-      'TRANSFER5_ACTION2' : 'Bestätigung ausdrucken'
+      'TRANSFER5_ACTIONSEL' : 'Keep conformation',
+      'TRANSFER5_ACTIONSEL1' : 'Bestätigung herunterladen',
+      'TRANSFER5_ACTIONSEL2' : 'Als Anhang per Email schicken',
+      'TRANSFER5_ACTIONSEL3' : 'Bestätigung ausdrucken'
     });
 
     $translateProvider.preferredLanguage('en');

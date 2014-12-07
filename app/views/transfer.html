@@ -1,8 +1,17 @@
+
 <div class="transfer-step0" >
   <h4 translate="TRANSFER_ACTION"></h4>
 
   <div class="well">
-    <div class="container-fluid"></div>
+    <div class="row" ng-show="pausedTrasfer">
+      <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          Paused
+        </div>
+      </div>
+    </div>
     <div class="row" ng-show="canceledTrasfer">
       <div class="col-md-12">
         <div class="alert alert-danger" role="alert">
@@ -52,7 +61,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-6" ng-repeat="recipient in recipients" ng-class="{ selected: $index == selectedIndex }" ng-click="itemClicked($index)"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{recipient.name}} </div>
-            <div class="col-md-6"> TRANSLATE NEW REC. </div>
+            <div class="col-md-6"> <div ng-click="addTransferRecipient()"> <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> {{ 'TRANSFER1_NEW' | translate }} </div> </div>
           </div>
           <div class="row">
             <div class="col-md-4">
@@ -130,8 +139,21 @@
   <h4 translate="TRANSFER3_ACTION"></h4>
 
   <div class="well">
+    <div class="row" ng-show="pausedTrasfer">
+      <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">somethign</span>
+          <span class="pull-right">
+           <button type="button" class="btn btn-default" ng-click="pauseTransfer()" translate="TRANSFER_NEXT"></button>
+          </span>
+
+        </div>
+      </div>
+    </div>
     <div class="panel panel-default">
-      <div class="panel-heading"> {{ 'TRANSFER3_HEADER' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc3 = !desc3"></span></div>
+      <div class="panel-heading"> {{ 'TRANSFER3_HEADER' | translate}} <span
+        class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc3 = !desc3"></span></div>
       <table class="table" ng-show="desc3">
         <tr>
           <td translate="TRANSFER3_DESC"></td>
@@ -141,21 +163,25 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-9">{{transferData.recipient}}</div>
-            <div class="col-md-2"><input type="checkbox"></div>
+            <div class="col-md-2"><input type="checkbox" ng-model="step4Value1"></div>
           </div>
           <div class="row">
             <div class="col-md-9">{{transferData.amount | currency:"EUR"}}</div>
-            <div class="col-md-2"><input type="checkbox"></div>
+            <div class="col-md-2"><input type="checkbox" ng-model="step4Value2"></div>
           </div>
           <div class="row">
             <div class="col-md-4">
-              <button type="button" class="btn btn-default" ng-click="cancelTransfer()" translate="TRANSFER_CANCEL"></button>
+              <button type="button" class="btn btn-default" ng-click="cancelTransfer()"
+                      translate="TRANSFER_CANCEL"></button>
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-default" translate="TRANSFER3_PAUSE"></button>
+              <button type="button" class="btn btn-default" ng-disabled="!(step4Value1 && step4Value2)"
+                      translate="TRANSFER3_PAUSE" ng-click="stopTransfer()"></button>
+              {{stopTransfer}}
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" translate="TRANSFER_NEXT"></button>
+              <button type="button" class="btn btn-default" ng-disabled="!(step4Value1 && step4Value2)"
+                      ng-click="nextStepTransfer()" translate="TRANSFER_NEXT"></button>
             </div>
           </div>
         </div>
@@ -163,6 +189,8 @@
     </div>
   </div>
 </div>
+
+
 
 <div class="transfer-step4" style="display: none;">
   <h4 translate="TRANSFER4_ACTION"></h4>
@@ -177,9 +205,10 @@
       </table>
       <div class="panel-body">
         <div class="container-fluid">
+          <form name="transferPINForm">
           <div class="row">
             <div class="col-md-6">
-              <input type="number" class="form-control" placeholder="{{ 'TRANSFER4_INPUT' | translate  }}">
+                <input type="number" name="PINinput" ng-model="PINinput"  class="form-control" placeholder="{{ 'TRANSFER4_INPUT' | translate  }}">
             </div>
             <div class="col-md-6"></div>
           </div>
@@ -189,9 +218,10 @@
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" translate="TRANSFER_NEXT"></button>
+              <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" ng-disabled="!(transferPINForm.PINinput.$valid && transferPINForm.PINinput.$dirty)" translate="TRANSFER_NEXT"></button>
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>
@@ -219,7 +249,18 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              <button type="button" class="btn btn-default" aria-label="{{ 'TRANSFER5_ACTION2' | translate }}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTION2' | translate }}</button>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                  DROPDOWN
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="Transfer actions">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" aria-label="{{ 'TRANSFER5_ACTION2' | translate }}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTION2' | translate }}</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                </ul>
+              </div>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4">

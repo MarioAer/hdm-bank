@@ -1,11 +1,7 @@
 'use strict';
 
-
-
-
-
 angular.module('swFrontApp')
-  .controller('TransferCtrl', function ($scope, $location, $http) {
+  .controller('TransferCtrl', function ($scope, $location, $http, ngDialog) {
 
     //angular.element(document).ready(function () {
     //
@@ -16,6 +12,7 @@ angular.module('swFrontApp')
     $scope.recipientCheck = true;
     $scope.canceledTrasfer = false;
     $scope.ammountExcedsBalance = false;
+    $scope.pausedTrasfer = false;
 
     $scope.transferElements = [
       angular.element('.transfer-step0'),
@@ -52,9 +49,20 @@ angular.module('swFrontApp')
           $scope.ammountExcedsBalance = false;
         }
         $scope.transferData.amount = $scope.transAmmountInput;
+        $scope.transferData.left = $scope.accoutnBalance - $scope.transferData.amount;
+        console.log($scope.transferData.left)
       }
-      }
-    );
+    });
+
+    $scope.addTransferRecipient = function (){
+      ngDialog.open({
+        template: '<p>my template</p>',
+        plain: true,
+          controller: ['$scope', function($scope) {
+          // controller logic
+        }]
+      });
+    }
 
     $scope.selectedIndex = -1; // Whatever the default selected index is, use -1 for no selection
 
@@ -74,7 +82,12 @@ angular.module('swFrontApp')
       $scope.currentTransferElement = 1;
       $scope.recipientCheck = true;
       $scope.canceledTrasfer = false;
+      $scope.pausedTrasfer = false;
       $scope.ammountInput = '';
+
+      $scope.step4Value1 = false;
+      $scope.step4Value2 = false;
+
     }
 
     $scope.nextStepTransfer = function() {
@@ -107,6 +120,26 @@ angular.module('swFrontApp')
       $scope.canceledTrasfer = true;
       $scope.currentTransferElement = 0;
       $scope.recipientCheck = true;
+    }
+
+    $scope.pauseTransfer = function () {
+      angular.element('.sout-btn').show();
+      for (var i=0; i < $scope.transferElements.length ; i++){
+        $scope.transferElements[i].hide();
+      }
+      $scope.transferElements[0].show();
+      $scope.transferData = {
+        recipient : '',
+        amount : '',
+        left : ''
+      }
+      $scope.pausedTrasfer = true;
+      $scope.currentTransferElement = 0;
+      $scope.recipientCheck = true;
+    }
+
+    $scope.stopTransfer = function () {
+      $scope.pausedTrasfer = true;
     }
 
     $scope.go = function ( path ) {
