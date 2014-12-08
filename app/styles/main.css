@@ -34,7 +34,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 830px;
   }
 }
 .container-narrow > hr {
@@ -60,7 +60,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 868px) {
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -77,3 +77,158 @@ body {
     border-bottom: 0;
   }
 }
+
+
+
+/* Custom CSS */
+
+.hundred{
+  height: 36px;
+  width: 66px;
+  background-size: 65px 33px;
+  background-image: url('/images/100.jpg');
+}
+
+.fifty {
+  height: 34px;
+  width: 63px;
+  background-size: 59px 30px;
+  background-image: url('/images/50.jpg');
+}
+
+.twenty {
+  height: 32px;
+  width: 60px;
+  background-size: 56px 28px;
+  background-image: url('/images/20.jpg');
+}
+
+.ten {
+  height: 30px;
+  width: 57px;
+  background-size: 53px 26px;
+  background-image: url('/images/10.jpg');
+}
+.five {
+  height: 28px;
+  width: 55px;
+  background-size: 51px 24px;
+  background-image: url('/images/5.jpg');
+}
+
+.two {
+  height: 25px;
+  width: 25px;
+  background-size: 25px 25px;
+  background-image: url('/images/c-two.jpg');
+}
+
+.one {
+  height: 23px;
+  width: 23px;
+  background-size: 23px 23px;
+  background-image: url('/images/c-one.jpg');
+}
+
+.c-fifty {
+  height: 21px;
+  width: 21px;
+  background-size: 21px 21px;
+  background-image: url('/images/c-fifty.jpg');
+}
+
+.c-twenty {
+  height: 20px;
+  width: 20px;
+  background-size: 20px 20px;
+  background-image: url('/images/c-twenty.jpg');
+}
+
+.c-ten {
+  height: 19px;
+  width: 19px;
+  background-size: 19px;
+  background-image: url('/images/c-ten.jpg');
+}
+
+.c-five {
+  height: 19px;
+  width: 19px;
+  background-size: 19px;
+  background-image: url('/images/c-five.jpg');
+}
+
+.c-one {
+  height: 19px;
+  width: 19px;
+  background-size: 19px;
+  background-image: url('/images/c-one.jpg');
+}
+
+.bill {
+  border: 2px solid white;
+}
+
+.coin {
+
+}
+
+.bill-group {
+  list-style: none;
+  float: left;
+  height: 100px;
+  width: 40%;
+  position: relative;
+}
+
+.bill-group .coin {
+  float: right;
+  position: static;
+}
+
+.bill-group li {
+  position: absolute;
+  right: 0;
+}
+
+.bill-group li + li {
+  right: 15px;
+  top: 15px
+}
+
+.bill-group li + li + li{
+  right: 30px;
+  top: 30px
+}
+
+.bill-group li + li + li + li{
+  right: 45px;
+  top: 45px
+}
+
+.bill-group li + li + li + li + li {
+  right: 60px;
+  top: 60px
+}
+
+.bill-group li + li + li + li + li + li{
+  right: 75px;
+  top: 75px
+}
+
+.bill-group li + li + li + li + li + li + li{
+  right: 90px;
+  top: 90px
+}
+
+.bill-group li + li + li + li + li + li + li + li{
+  right: 105px;
+  top: 105px
+}
+
+.bill-group::nth-child(2n) {
+  clear: both;
+}
+
+
+

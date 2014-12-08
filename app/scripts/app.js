@@ -56,9 +56,10 @@ angular
       'TRANSFER3_ACTION' : 'Transfer : Third Step',
       'TRANSFER3_HEADER' : 'Review',
       'TRANSFER3_DESC' : 'Check that every items is right',
-      'TRANSFER3_SEL_OK' : 'Yes',
-      'TRANSFER3_SEL_BAD' : 'No',
       'TRANSFER3_PAUSE' : 'Hold transfer - Print a copy for verification',
+      'TRANSFER3_PAUSE_MSG' : 'You will be able to finish this transfer later',
+      'TRANSFER3_PAUSE_MSG_OK' : 'Save for later',
+      'TRANSFER3_PAUSE_MSG_BAD' : 'Continue at this moment',
       // transfer 4
       'TRANSFER4_ACTION' : 'Transfer : Forth Step',
       'TRANSFER4_HEADER' : 'Security Code',
@@ -111,15 +112,16 @@ angular
       'TRANSFER3_ACTION' : 'Überweisung : Dritter Schritt',
       'TRANSFER3_HEADER' : 'Überprüfung',
       'TRANSFER3_DESC' : 'Überprüfen Sie die Eingaben, wenn ja bestätigen Sie die Eingabe.',
-      'TRANSFER3_SEL_OK' : 'Ja',
-      'TRANSFER3_SEL_BAD' : 'Nein',
       'TRANSFER3_PAUSE' : 'Noch nicht überweisen. Erst zur Überprüfung ausdrucken',
-      // transfer 3
+      'TRANSFER3_PAUSE_MSG' : 'Die Überweisung wird für später gespeichert',
+      'TRANSFER3_PAUSE_MSG_OK' : 'Für später speichern',
+      'TRANSFER3_PAUSE_MSG_BAD' : 'Überweisung weiterführen',
+      // transfer 4
       'TRANSFER4_ACTION' : 'Überweisung : Letzter Schritt',
       'TRANSFER4_HEADER' : 'Sicherheit Überprüfung',
       'TRANSFER4_DESC' : 'Sie bekommen per SMS eine PIN, geben Sie diese ein.',
       'TRANSFER4_INPUT' : 'PIN Eingeben',
-      //transfer 4
+      //transfer 5
       'TRANSFER5_ACTION' : 'Überweisung : Bestätigung',
       'TRANSFER5_HEADER' : 'Die Überweisung wurde ausgeführt',
       'TRANSFER5_DESC' : 'Die Überweisung wurde ausgeführt, folgende Informationen sind wichtig',

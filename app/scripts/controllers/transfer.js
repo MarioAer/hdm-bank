@@ -56,10 +56,12 @@ angular.module('swFrontApp')
 
     $scope.addTransferRecipient = function (){
       ngDialog.open({
-        template: '<p>my template</p>',
+        template: '<form role="form" ng-submit="close()"> <div class="form-group"> <label for="exampleInput1">Name</label> <input type="text" class="form-control" id="exampleInput1" placeholder="Name"> <p class="help-block">Suspendisse vel consequat elit, et vehicula tortor.</p></div><div class="form-group"> <label for="exampleInput2">Bank</label> <input type="text" class="form-control" id="exampleInput2" placeholder="Bank"> <p class="help-block">Suspendisse vel consequat elit, et vehicula tortor.</p></div><div class="form-group"> <label for="exampleInput3">IBAN</label> <input type="text" class="form-control" id="exampleInput3" placeholder="IBAN"> <p class="help-block">Suspendisse vel consequat elit, et vehicula tortor.</p></div><button type="submit" class="btn btn-default">Submit</button> </form>',
         plain: true,
           controller: ['$scope', function($scope) {
-          // controller logic
+            $scope.close = function () {
+              $scope.closeThisDialog('');
+            }
         }]
       });
     }

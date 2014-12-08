@@ -139,18 +139,27 @@
   <h4 translate="TRANSFER3_ACTION"></h4>
 
   <div class="well">
-    <div class="row" ng-show="pausedTrasfer">
-      <div class="col-md-12">
-        <div class="alert alert-info" role="alert">
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-          <span class="sr-only">somethign</span>
-          <span class="pull-right">
-           <button type="button" class="btn btn-default" ng-click="pauseTransfer()" translate="TRANSFER_NEXT"></button>
-          </span>
-
+    <div ng-show="pausedTrasfer">
+      <div class="row" >
+        <div class="col-md-12">
+          <div class="alert alert-info" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">{{ 'TRANSFER3_PAUSE_MSG' | translate }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default" ng-click="nextStepTransfer()" translate="TRANSFER3_PAUSE_MSG_BAD"></button>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default" ng-click="pauseTransfer()" translate="TRANSFER3_PAUSE_MSG_OK"></button>
+        </div>
         </div>
       </div>
     </div>
+
     <div class="panel panel-default">
       <div class="panel-heading"> {{ 'TRANSFER3_HEADER' | translate}} <span
         class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc3 = !desc3"></span></div>
@@ -163,11 +172,19 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-9">{{transferData.recipient}}</div>
-            <div class="col-md-2"><input type="checkbox" ng-model="step4Value1"></div>
+            <div class="col-md-2">
+              <div class="checkbox">
+                <input type="checkbox" ng-model="step4Value1">
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-9">{{transferData.amount | currency:"EUR"}}</div>
-            <div class="col-md-2"><input type="checkbox" ng-model="step4Value2"></div>
+            <div class="col-md-2">
+              <div class="checkbox">
+                <input type="checkbox" ng-model="step4Value2">
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-4">
@@ -250,15 +267,15 @@
           <div class="row">
             <div class="col-md-4">
               <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                  DROPDOWN
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                  {{'TRANSFER5_ACTIONSEL' | translate}}
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="Transfer actions">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" aria-label="{{ 'TRANSFER5_ACTION2' | translate }}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTION2' | translate }}</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" aria-label="{{'TRANSFER5_ACTIONSEL1' | translate }}"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> {{'TRANSFER5_ACTIONSEL1' | translate }}</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"aria-label="{{'TRANSFER5_ACTIONSEL2' | translate }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{'TRANSFER5_ACTIONSEL2' | translate }}</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#" aria-label="{{ 'TRANSFER5_ACTIONSEL3' | translate }}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTIONSEL3' | translate }}</a></li>
                 </ul>
               </div>
             </div>

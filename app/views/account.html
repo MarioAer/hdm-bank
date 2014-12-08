@@ -10,10 +10,14 @@
         </tr>
       </table>
       <div class="panel-body">
-        <div class=".container-fluid">
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-md-6 text-center"> {{ accoutnBalance | currency:"EUR" }}</div>
-            <div class="col-md-6"></div>
+            <div class="col-md-6 text-center"> {{ accountBalance | currency:"EUR" }}</div>
+            <div class="col-md-6 bill-container">
+              <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
+                <li ng-repeat="i in getNumber(bill.quantity) track by $index" class="{{bill.name}}"> </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
