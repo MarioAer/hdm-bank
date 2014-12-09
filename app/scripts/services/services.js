@@ -3,6 +3,7 @@ angular.module('swFrontApp')
     return {
       draw : function (ammount) {
         var money = [
+          { value : 500, quantity : 0, name: 'bill fivehundred' },
           { value : 100, quantity : 0, name: 'bill hundred' },
           { value : 50, quantity : 0, name: 'bill fifty' },
           { value : 20, quantity : 0, name: 'bill twenty' },
