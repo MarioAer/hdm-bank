@@ -17,8 +17,20 @@ angular.module('swFrontApp')
         $scope.bankInfo = res.data.hdm_bank_data;
         $scope.accountBalance = $scope.bankInfo.account.balance;
         $scope.recipients = $scope.bankInfo.recipients;
-        $scope.bills = billDrawer.draw($scope.accountBalance);
-        console.log($scope.bills)
+        $scope.currency = billDrawer.draw($scope.accountBalance);
+        var a=0,b=0;
+        $scope.bills = [];
+        $scope.coins = [];
+        for (var i = 0; i < $scope.currency.length; i++){
+          if ($scope.currency[i].type == 'bill'){
+            $scope.bills[a] = $scope.currency[i];
+            a++;
+          } else if($scope.currency[i].type == 'coin'){
+            $scope.coins[b] = $scope.currency[i];
+            b++;
+          }
+        }
+
       });
 
     $scope.getNumber = function(num) {

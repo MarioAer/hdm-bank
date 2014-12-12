@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name swFrontApp
- * @description
- * # swFrontApp
- *
- * Main module of the application.
- */
 angular
   .module('swFrontApp', [
     'ngAnimate',
@@ -30,6 +22,10 @@ angular
       'ORDER': 'Standing Order',
       'HELP': 'Help',
       'SIGNOUT': 'Sign Out',
+      // Error
+      'ERROR': 'Error',
+      'NAN' : 'Not a acceptable monay ammount',
+      'MUCH' : 'Not enough money in account',
       // account
       'ACCOUNT_ACTION' : 'Your current Balance',
       'BALANCE' : 'Balance',
@@ -39,9 +35,14 @@ angular
       'TRANSFER_HEADER' : 'Transfering Money',
       'TRANSFER_DESC' : 'Doing a transfer involves giving part of you money to other person',
       'START_TRANSFER_BUTTON' : 'Start new trasfer',
-      'TRANSFER_CANCEL' : 'Cancel - Keep my money',
+      'TRANSFER_CANCEL' : 'Cancel - Stop Transaction',
+      'TRANSFER_CANCEL_MSG' : 'Are you sure, you want to stop this transaction?',
+      'TRANSFER_CANCEL_MSG1' : 'Stop Transfer',
+      'TRANSFER_CANCEL_MSG2' : 'Continue Transfer',
       'TRANSFER_NEXT' : 'Continue to next step ',
       'TRANSFER_BACK' : 'Back to previous step',
+      'TRANSFER_PAUSED' : 'The transaction has been saved for later',
+      'TRANSFER_CANCELED' : 'You just canceled the money transfer',
       // transfer 1
       'TRANSFER1_ACTION' : 'Transfer : First Step',
       'TRANSFER1_HEADER' : 'For whom is the money?',
@@ -57,7 +58,7 @@ angular
       'TRANSFER3_HEADER' : 'Review',
       'TRANSFER3_DESC' : 'Check that every items is right',
       'TRANSFER3_PAUSE' : 'Hold transfer - Print a copy for verification',
-      'TRANSFER3_PAUSE_MSG' : 'You will be able to finish this transfer later',
+      'TRANSFER3_PAUSE_MSG' : 'You will be able to finish this transaction later',
       'TRANSFER3_PAUSE_MSG_OK' : 'Save for later',
       'TRANSFER3_PAUSE_MSG_BAD' : 'Continue at this moment',
       // transfer 4
@@ -86,6 +87,10 @@ angular
       'ORDER': 'Dauerauftrag',
       'HELP': 'Hilfe',
       'SIGNOUT': 'Abmelden',
+      // Error
+      'ERROR': 'Error',
+      'NAN' : 'Nicht eine gültige geld Summe',
+      'MUCH' : 'Sie haben nicht so viel Geld auf Ihrem Konto',
       // account
       'ACCOUNT_ACTION' : 'Ihrer Kontostand',
       'BALANCE' : 'Kontostand',
@@ -96,8 +101,13 @@ angular
       'TRANSFER_DESC' : 'Bei einer Überweisung geben Sie einer anderen Person Teil von Ihrem Geld',
       'START_TRANSFER_BUTTON' : 'Zur Überweisung',
       'TRANSFER_CANCEL' : 'Abbrechen : Geld behalten',
+      'TRANSFER_CANCEL_MSG' : 'Sind sie sicher?',
+      'TRANSFER_CANCEL_MSG1' : 'Überweisung abbrechen',
+      'TRANSFER_CANCEL_MSG2' : 'Überweisung weiterführen',
       'TRANSFER_NEXT' : 'Weiter zum nächsten Schritt',
       'TRANSFER_BACK' : 'Zurück zum letzten Schritt',
+      'TRANSFER_PAUSED' : 'Die Überweisung wurde für später gespeichert',
+      'TRANSFER_CANCELED' : 'Die Überweisung wurde abgebrochen',
       // transfer 1
       'TRANSFER1_ACTION' : 'Überweisung : Erster Schritt',
       'TRANSFER1_HEADER' : 'Wem möchten Sie Geld geben?',

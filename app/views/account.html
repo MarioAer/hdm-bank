@@ -1,10 +1,10 @@
-<div class="transfert-step0">
+<div class="balance-screen">
   <h4 translate="ACCOUNT_ACTION"></h4>
 
   <div class="well">
     <div class="panel panel-default">
-      <div class="panel-heading"> {{ 'BALANCE' | translate}} <span class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-      <table class="table">
+      <div class="panel-heading"> {{ 'BALANCE' | translate}} <span ng-click="desc = !desc" class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+      <table class="table" ng-show="desc">
         <tr>
           <td translate="BALANCE_DESC"></td>
         </tr>
@@ -13,10 +13,17 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-6 text-center"> {{ accountBalance | currency:"EUR" }}</div>
-            <div class="col-md-6 bill-container">
-              <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
-                <li ng-repeat="i in getNumber(bill.quantity) track by $index" class="{{bill.name}}"> </li>
-              </ul>
+            <div class="col-md-6 currency-drawer">
+              <div class="bills-container">
+                <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
+                  <li ng-repeat="i in getNumber(bill.quantity) track by $index" class="{{bill.name}}"> </li>
+                </ul>
+              </div>
+              <div class="coins-container">
+                <ul ng-repeat="coin in coins" ng-show="coin.quantity" class="coin-group">
+                  <li ng-repeat="i in getNumber(coin.quantity) track by $index" class="{{coin.name}}"> </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

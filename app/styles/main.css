@@ -81,118 +81,133 @@ body {
 
 
 /* Custom CSS */
+
+.currency-drawer{
+  background: white;
+  border-left: 1px solid black;
+}
+
+.bill {
+  border: 2px solid white;
+  background-size: 100%;
+}
+
+.coin {
+  background-size: 100%;
+}
+
 .fivehundred {
-  height: 53px;
-  width: 89px;
-  background-size: 88px 56px;
+  height: 68px;
+  width: 117px;
   background-image: url('/images/500.jpg');
 }
 
 .hundred{
-  height: 56px;
-  width: 86px;
-  background-size: 85px 53px;
+  height: 65px;
+  width: 114px;
   background-image: url('/images/100.jpg');
 }
 
 .fifty {
-  height: 54px;
-  width: 83px;
-  background-size: 79px 50px;
+  height: 62px;
+  width: 113px;
   background-image: url('/images/50.jpg');
 }
 
 .twenty {
-  height: 52px;
-  width: 80px;
-  background-size: 76px 48px;
+  height: 60px;
+  width: 111px;
   background-image: url('/images/20.jpg');
 }
 
 .ten {
-  height: 50px;
-  width: 77px;
-  background-size: 73px 46px;
+  height: 58px;
+  width: 106px;
   background-image: url('/images/10.jpg');
 }
 .five {
-  height: 48px;
-  width: 75px;
-  background-size: 71px 44px;
+  height: 55px;
+  width: 105px;
   background-image: url('/images/5.jpg');
 }
 
 .two {
-  height: 45px;
-  width: 45px;
-  background-size: 45px 45px;
-  background-image: url('/images/c-two.jpg');
+  height: 55px;
+  width: 55px;
+  background-image: url('/images/2.jpg');
 }
 
 .one {
-  height: 43px;
-  width: 43px;
-  background-size: 43px 43px;
-  background-image: url('/images/c-one.jpg');
+  height: 50px;
+  width: 51px;
+  background-image: url('/images/1.jpg');
 }
 
 .c-fifty {
-  height: 41px;
-  width: 41px;
-  background-size: 41px 41px;
+  height: 46px;
+  width: 46px;
   background-image: url('/images/c-fifty.jpg');
 }
 
 .c-twenty {
   height: 40px;
   width: 40px;
-  background-size: 40px 40px;
   background-image: url('/images/c-twenty.jpg');
 }
 
 .c-ten {
   height: 39px;
   width: 39px;
-  background-size: 39px;
   background-image: url('/images/c-ten.jpg');
 }
 
 .c-five {
   height: 39px;
   width: 39px;
-  background-size: 39px;
   background-image: url('/images/c-five.jpg');
 }
 
 .c-one {
-  height: 39px;
-  width: 39px;
-  background-size: 39px;
+  height: 36px;
+  width: 36px;
   background-image: url('/images/c-one.jpg');
 }
 
-.bill {
-  border: 2px solid white;
+.coins-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 1em;
+  border-top: 1px solid rgb(223, 223, 223);
+  overflow: auto;
 }
 
-.coin {
+.coin-group {
+  list-style: none;
+  padding: 0;
+}
 
+.coin-group li {
+  float: right;
+}
+
+.bills-container{
+  overflow: auto;
 }
 
 .bill-group {
   list-style: none;
   float: left;
-  height: 100px;
-  width: 40%;
+  height: 130px;
+  width: 50%;
   position: relative;
   padding: 0;
   margin: 0;
-
 }
 
-.bill-group .coin {
-  float: right;
-  position: static;
+.bill-group::nth-child(2n) {
+  clear: both;
 }
 
 .bill-group li {
@@ -235,9 +250,6 @@ body {
   top: 105px
 }
 
-.bill-group::nth-child(2n) {
-  clear: both;
-}
 
 
 

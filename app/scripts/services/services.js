@@ -2,37 +2,37 @@ angular.module('swFrontApp')
   .factory('billDrawer', function () {
     return {
       draw : function (ammount) {
-        var money = [
-          { value : 500, quantity : 0, name: 'bill fivehundred' },
-          { value : 100, quantity : 0, name: 'bill hundred' },
-          { value : 50, quantity : 0, name: 'bill fifty' },
-          { value : 20, quantity : 0, name: 'bill twenty' },
-          { value : 10, quantity : 0, name: 'bill ten' },
-          { value : 5, quantity : 0, name: 'bill five' },
-          { value : 2, quantity : 0, name: 'bill two' },
-          { value : 1, quantity : 0, name: 'bill one' },
-          { value : 0.5, quantity : 0, name: 'coin c-fifty' },
-          { value : 0.2, quantity : 0, name: 'coin c-twenty' },
-          { value : 0.1, quantity : 0, name: 'coin c-ten' },
-          { value : 0.05, quantity : 0, name: 'coin c-five' },
-          { value : 0.01, quantity : 0, name: 'coin c-ten' }
+        var currency = [
+          { type:'bill', value : 500, quantity : 0, name: 'bill fivehundred' },
+          { type:'bill', value : 100, quantity : 0, name: 'bill hundred' },
+          { type:'bill', value : 50, quantity : 0, name: 'bill fifty' },
+          { type:'bill', value : 20, quantity : 0, name: 'bill twenty' },
+          { type:'bill', value : 10, quantity : 0, name: 'bill ten' },
+          { type:'bill', value : 5, quantity : 0, name: 'bill five' },
+          { type:'coin', value : 2, quantity : 0, name: 'coin two' },
+          { type:'coin', value : 1, quantity : 0, name: 'coin one' },
+          { type:'coin', value : 0.5, quantity : 0, name: 'coin c-fifty' },
+          { type:'coin', value : 0.2, quantity : 0, name: 'coin c-twenty' },
+          { type:'coin', value : 0.1, quantity : 0, name: 'coin c-ten' },
+          { type:'coin', value : 0.05, quantity : 0, name: 'coin c-five' },
+          { type:'coin', value : 0.01, quantity : 0, name: 'coin c-one' }
         ]
 
-        var divide = function (bills , step, value) {
-          if (value > 0.009 && step < 11 ) {
-            if (value > bills[step].value) {
-              bills[step].quantity =  Math.floor(value / bills[step].value);
-              value = value - bills[step].quantity * bills[step].value;
+        var divide = function (currency, step, value) {
+          if (value > 0.009 && step < 13 ) {
+            if (value >= currency[step].value) {
+              currency[step].quantity =  Math.floor(value / currency[step].value);
+              value = (value - (currency[step].quantity * currency[step].value)).toFixed(2);
             }
             step = step + 1;
-            divide(bills, step, value);
+            divide(currency, step, value);
           } else {
-            return bills;
+            return currency;
           }
         }
 
-        divide(money, 0, ammount);
-        return money;
+        divide(currency, 0, parseFloat(ammount));
+        return currency;
 
       }
     }
