@@ -8,11 +8,6 @@ angular.module('swFrontApp')
     };
 
   })
-  .controller('MainCtrl', [ '$scope', '$location', 'myService', function ($scope, $location, myService) {
-
-
-
-  }])
   .controller('NavCtrl', function ($scope, $location) {
 
     angular.element('.sout-btn').show();
@@ -20,6 +15,9 @@ angular.module('swFrontApp')
     $scope.isActive = function (path) {
       return path === $location.path();
     };
+
+  })
+  .controller('MainCtrl', function ($scope) {
 
 
 

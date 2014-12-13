@@ -1,5 +1,54 @@
 <div class="transfer-screen">
   <!-- Step 0 -->
+
+  <div class="cancel-warning" ng-show="cancelWarningMsg">
+    <div class="container-fluid alert alert-info" role="alert">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{ 'TRANSFER_CANCEL_MSG' |
+            translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default pull-left" ng-click="cancelWarning()"
+                  translate="TRANSFER_CANCEL_MSG2"></button>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default pull-right" ng-click="cancelTransfer()"
+                  translate="TRANSFER_CANCEL_MSG1"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pause-warning" ng-show="pausedTrasfer">
+    <div class="container-fluid alert alert-info" role="alert">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{ 'TRANSFER3_PAUSE_MSG' |
+            translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default pull-left" ng-click="nextStepTransfer()"
+                  translate="TRANSFER3_PAUSE_MSG_BAD"></button>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default pull-right" ng-click="pauseTransfer()"
+                  translate="TRANSFER3_PAUSE_MSG_OK"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="transfer-step0">
     <h4 translate="TRANSFER_ACTION"></h4>
 
@@ -76,7 +125,7 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <button type="button" class="btn btn-default pull-left" ng-click="cancelTransfer()"
+                <button type="button" class="btn btn-default pull-left" ng-click="cancelWarning()"
                         translate="TRANSFER_CANCEL"></button>
               </div>
               <div class="col-md-4"></div>
@@ -152,7 +201,7 @@
               </div>
               <div class="row">
                 <div class="col-md-4">
-                  <button type="button" class="btn btn-default pull-left" ng-click="cancelTransfer()"
+                  <button type="button" class="btn btn-default pull-left" ng-click="cancelWarning()"
                           translate="TRANSFER_CANCEL"></button>
                 </div>
                 <div class="col-md-4"></div>
@@ -175,29 +224,7 @@
   <div class="transfer-step3" style="display: none;">
     <h4 translate="TRANSFER3_ACTION"></h4>
 
-    <div ng-show="pausedTrasfer">
-      <div class="container-fluid alert alert-info" role="alert">
-        <div class="row">
-          <div class="col-md-12">
-            <div>
-              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{ 'TRANSFER3_PAUSE_MSG' |
-              translate }}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <button type="button" class="btn btn-default pull-left" ng-click="nextStepTransfer()"
-                    translate="TRANSFER3_PAUSE_MSG_BAD"></button>
-          </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <button type="button" class="btn btn-default pull-right" ng-click="pauseTransfer()"
-                    translate="TRANSFER3_PAUSE_MSG_OK"></button>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <div class="well">
       <div class="panel panel-default">
@@ -240,7 +267,7 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <button type="button" class="pull-left btn btn-default" ng-click="cancelTransfer()"
+                <button type="button" class="pull-left btn btn-default" ng-click="cancelWarning()"
                         translate="TRANSFER_CANCEL"></button>
               </div>
               <div class="col-md-4">
@@ -285,7 +312,7 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <button type="button" class="pull-left btn btn-default" ng-click="cancelTransfer()"
+                <button type="button" class="pull-left btn btn-default" ng-click="cancelWarning()"
                         translate="TRANSFER_CANCEL"></button>
               </div>
               <div class="col-md-4"></div>

@@ -26,6 +26,11 @@ angular
       'ERROR': 'Error',
       'NAN' : 'Not a acceptable monay ammount',
       'MUCH' : 'Not enough money in account',
+      // home
+      'HOME_WELCOME': 'Welcome to the HdM Bank Services',
+      'HOME_PAUSED': 'Paused transactions',
+      'HOME_PAUSED_NONE': "You don't have any paused transactions",
+      'HOME_PAUSED_EXIST': "You have {{pausedTrans}} paused transactions",
       // account
       'ACCOUNT_ACTION' : 'Your current Balance',
       'BALANCE' : 'Balance',
@@ -91,6 +96,11 @@ angular
       'ERROR': 'Error',
       'NAN' : 'Nicht eine gültige geld Summe',
       'MUCH' : 'Sie haben nicht so viel Geld auf Ihrem Konto',
+      // home
+      'HOME_WELCOME': 'Willkommen',
+      'HOME_PAUSED': 'Überweisungen zur überprüfung',
+      'HOME_PAUSED_NONE': "Sie haben keine Überweisungen zur Überprüfung",
+      'HOME_PAUSED_EXIST': "Sie haben {{pausedTrans}} zur Überprüfung Überweisungen",
       // account
       'ACCOUNT_ACTION' : 'Ihrer Kontostand',
       'BALANCE' : 'Kontostand',

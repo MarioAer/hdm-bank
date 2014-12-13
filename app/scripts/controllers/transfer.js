@@ -9,6 +9,7 @@ angular.module('swFrontApp')
     $scope.ammountExcedsBalance = false;
     $scope.pausedTrasfer = false;
     $scope.selectedIndex = -1; // Whatever the default selected index is, use -1 for no selection
+    $scope.cancelWarningMsg = false;
 
     $scope.transferElements = [
       angular.element('.transfer-step0'),
@@ -59,9 +60,14 @@ angular.module('swFrontApp')
       $scope.pausedTrasfer = true;
     }
 
-    $scope.cancelTransfer = function () {
+    $scope.cancelWarning = function () {
+      $scope.cancelWarningMsg = !$scope.cancelWarningMsg;
+    }
 
+
+    $scope.cancelTransfer = function () {
       angular.element('.sout-btn').show();
+      angular.element('.cancel-warning').hide();
       for (var i=0; i < $scope.transferElements.length ; i++){
         $scope.transferElements[i].hide();
       }
@@ -78,6 +84,7 @@ angular.module('swFrontApp')
 
     $scope.pauseTransfer = function () {
       angular.element('.sout-btn').show();
+      angular.element('.pause-warning').hide();
       for (var i=0; i < $scope.transferElements.length ; i++){
         $scope.transferElements[i].hide();
       }
