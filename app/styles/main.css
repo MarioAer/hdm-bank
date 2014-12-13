@@ -1,13 +1,18 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype')
+}
+
 /* Space out content a bit */
 body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
-.footer {
+.marketing{
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -22,6 +27,70 @@ body {
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
+}
+
+/* Navigation icons*/
+
+.nav-icon {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+
+}
+
+.nav > li > a {
+  padding: 15px 25px;
+}
+
+.nav-home-img {
+  background: url("../images/icons/home_g.png") no-repeat 4px;
+  background-size: 85%;
+}
+
+.nav-account-img {
+  background: url("../images/icons/account_g.png") no-repeat;
+  background-size: 100%;
+}
+
+.nav-transfer-img {
+  background: url("../images/icons/transfer_g.png") no-repeat;
+  background-size: 100%;
+}
+
+.nav-order-img {
+  background: url("../images/icons/order_g.png") no-repeat;
+  background-size: 100%;
+}
+
+.nav-help-img {
+  background: url("../images/icons/help_g.png") no-repeat 2px;
+  background-size: 90%;
+}
+
+
+.active .nav-home-img {
+  background: url("../images/icons/home.png") no-repeat 4px;
+  background-size: 85%;
+}
+
+.active .nav-account-img {
+  background: url("../images/icons/account.png") no-repeat;
+  background-size: 100%;
+}
+
+.active .nav-transfer-img {
+  background: url("../images/icons/transfer.png") no-repeat;
+  background-size: 100%;
+}
+
+.active .nav-order-img {
+  background: url("../images/icons/order.png") no-repeat;
+  background-size: 100%;
+}
+
+.active .nav-help-img {
+  background: url("../images/icons/help.png") no-repeat 2px;
+  background-size: 90%;
 }
 
 /* Custom page footer */
@@ -78,13 +147,36 @@ body {
   }
 }
 
+/* Panels */
+
+.panel .glyphicon-info-sign {
+  font-size: 1.4em;
+}
+
+.panel .table td {
+  padding-left: 15px;
+}
+
+.panel .panel-body {
+  padding: 15px 0;
+}
+
+.panel .panel-body .row {
+  padding: 15px 0;
+  line-height: 1.5em;
+}
 
 
-/* Custom CSS */
+/* Account */
+.balance-container {
+padding-top: 20%;
+font-size: xx-large;
+}
+
+/* Bill Drawer */
 
 .currency-drawer{
-  background: white;
-  border-left: 1px solid black;
+
 }
 
 .bill {
@@ -168,8 +260,8 @@ body {
 }
 
 .c-one {
-  height: 36px;
-  width: 36px;
+  height: 37px;
+  width: 37px;
   background-image: url('/images/c-one.jpg');
 }
 
@@ -250,6 +342,24 @@ body {
   top: 105px
 }
 
+.access-bar a{
+  padding: 0 5px;
+}
 
+.access-bar a:last-child{
+  padding: 0 0 0 5px;
+}
 
+.acc-font-small{
+  font-size: x-small;
+}
+.acc-font-medium{
+  font-size: small;
+}
+.acc-font-large{
+  font-size: medium;
+}
 
+.color-group {
+  padding-left: 25px;
+}

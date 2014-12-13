@@ -12,7 +12,7 @@
       <div class="panel-body">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-6 text-center"> {{ accountBalance | currency:"EUR" }}</div>
+            <div class="col-md-6 text-center balance-container"> {{ accountBalance | currency:"EUR" }}</div>
             <div class="col-md-6 currency-drawer">
               <div class="bills-container">
                 <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
