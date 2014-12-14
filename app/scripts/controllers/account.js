@@ -16,7 +16,6 @@ angular.module('swFrontApp')
       .then(function(res){
         $scope.bankInfo = res.data.hdm_bank_data;
         $scope.accountBalance = $scope.bankInfo.account.balance;
-        $scope.recipients = $scope.bankInfo.recipients;
         $scope.currency = billDrawer.draw($scope.accountBalance);
         var a=0,b=0;
         $scope.bills = [];

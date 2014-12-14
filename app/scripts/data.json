@@ -11,28 +11,28 @@
         "accountNumber": "055123",
         "bankName": "Deutsche Bank",
         "IBAN": "",
-        "photo": "/img/julia.png"
+        "photo": "julia.jpg"
       },
       {
-        "name" : "Strom - EnBW",
-        "accountNumber": "055343",
+        "name" : "Alexander Weber",
+        "accountNumber": "12345",
         "bankName": "Deutsche Bank",
         "IBAN": "",
-        "photo": "/img/strom.png"
+        "photo": "alexander.jpg"
       },
       {
         "name" : "Handy - Telekom",
         "accountNumber": "055165",
         "bankName": "Deutsche Bank",
         "IBAN": "",
-        "photo": "/img/handy.png"
+        "photo": "cell.png"
       },
       {
-        "name" : "Laura Fisher",
-        "accountNumber": "055134",
+        "name" : "Strom - EnBW",
+        "accountNumber": "055343",
         "bankName": "Deutsche Bank",
         "IBAN": "",
-        "photo": "/img/laura.png"
+        "photo": "EnBW.gif"
       }
     ]
   }

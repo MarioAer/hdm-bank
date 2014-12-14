@@ -2,7 +2,7 @@
   <!-- Step 0 -->
 
   <div class="cancel-warning" ng-show="cancelWarningMsg">
-    <div class="container-fluid alert alert-info" role="alert">
+    <div class="container-fluid alert alert-warning" role="alert">
       <div class="row">
         <div class="col-md-12">
           <div>
@@ -69,7 +69,7 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER_HEADER' | translate}} <span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc0 = !desc0"></span>
         </div>
@@ -100,7 +100,7 @@
     <h4 translate="TRANSFER1_ACTION"></h4>
 
     <div class="well">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER1_HEADER' | translate}} <span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc1 = !desc1"></span>
         </div>
@@ -112,15 +112,15 @@
         <div class="panel-body">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6" ng-repeat="recipient in recipients" ng-class="{ selected: $index == selectedIndex }"
-                   ng-click="itemClicked($index)"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                {{recipient.name}}
+              <div class="col-md-6 trans-recipient" ng-repeat="recipient in recipients"
+                   ng-class="{ selected: $index == selectedIndex }"
+                   ng-click="itemClicked($index)">
+                <div class="tras-recipient-pic" aria-hidden="true" ng-style="{'background-image': 'url(../images/recipients/{{recipient.photo}})'}"></div>
+                <div class="tras-recipient-name" aria-hidden="true">{{recipient.name}}</div>
               </div>
-              <div class="col-md-6">
-                <div ng-click="addTransferRecipient()"><span class="glyphicon glyphicon-plus-sign"
-                                                             aria-hidden="true"></span> {{ 'TRANSFER1_NEW' | translate
-                  }}
-                </div>
+              <div class="col-md-6 trans-recipient" ng-click="addTransferRecipient()">
+                <div class="tras-recipient-pic" aria-hidden="true" style="background-image: url(../images/recipients/plus.png)"></div>
+                <div class="tras-recipient-name" aria-hidden="true">{{ 'TRANSFER1_NEW' | translate}}</div>
               </div>
             </div>
             <div class="row">
@@ -131,7 +131,7 @@
               <div class="col-md-4"></div>
               <div class="col-md-4">
                 <button type="button" class="btn btn-default pull-right" ng-click="nextStepTransfer()"
-                        ng-disabled="recipientCheck" translate="TRANSFER_NEXT"></button>
+                        ng-disabled="recipientCheck" translate="TRANSFER_NEXT" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top"></button>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
     <h4 translate="TRANSFER2_ACTION"></h4>
 
     <div class="well">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading" translate="TRANSFER2_HEADER"
              translate-values="{ recipient : transferData.recipient}"><span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc2 = !desc2"></span>
@@ -158,8 +158,8 @@
           <form name="transferAmmountForm">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-6">
-                  <div class="input-group">
+                <div class="col-md-12">
+                  <div class="input-group"  ng-class="{'has-success' : !(transferAmmountForm.transferAmmountInput.$error.required || transferAmmountForm.transferAmmountInput.$error.pattern || ammountExcedsBalance), 'has-error' : (transferAmmountForm.transferAmmountInput.$error.required || transferAmmountForm.transferAmmountInput.$error.pattern || ammountExcedsBalance)}" >
                     <span class="input-group-addon">€</span>
                     <input type="text" numbers-only="numbers-only" class="form-control" name="transferAmmountInput"
                            ng-model="ammountInput"
@@ -167,20 +167,23 @@
                            max="{{accoutnBalance}}" required placeholder="{{ 'TRANSFER2_INPUT' | translate  }}">
                   </div>
                 </div>
-                <div class="col-md-6 currency-drawer"
-                     ng-hide="(transferAmmountForm.transferAmmountInput.$error.required || transferAmmountForm.transferAmmountInput.$error.pattern || ammountExcedsBalance)">
-                  <div class="bills-container">
-                    <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
-                      <li ng-repeat="i in getNumber(bill.quantity) track by $index" class="{{bill.name}}"></li>
-                    </ul>
-                  </div>
-                  <div class="coins-container">
-                    <ul ng-repeat="coin in coins" ng-show="coin.quantity" class="coin-group">
-                      <li ng-repeat="i in getNumber(coin.quantity) track by $index" class="{{coin.name}}"></li>
-                    </ul>
+              </div>
+                <div class="row">
+                  <div class="col-md-12 currency-drawer"
+                       ng-hide="(transferAmmountForm.transferAmmountInput.$error.required || transferAmmountForm.transferAmmountInput.$error.pattern || ammountExcedsBalance)">
+                    <div class="bills-container">
+                      <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
+                        <li ng-repeat="i in getNumber(bill.quantity) track by $index" class="{{bill.name}}"></li>
+                      </ul>
+                    </div>
+                    <div class="coins-container">
+                      <ul ng-repeat="coin in coins" ng-show="coin.quantity" class="coin-group">
+                        <li ng-repeat="i in getNumber(coin.quantity) track by $index" class="{{coin.name}}"></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
+
               <div class="row" ng-show="transferAmmountForm.transferAmmountInput.$error.pattern">
                 <div class="col-md-12">
                   <div class="alert alert-danger" role="alert">
@@ -227,7 +230,7 @@
 
 
     <div class="well">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER3_HEADER' | translate}} <span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc3 = !desc3"></span>
         </div>
@@ -239,13 +242,15 @@
         <div class="panel-body">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-9">{{transferData.recipient}}</div>
+              <div class="col-md-9" translate="TRANSFER3_REP"
+                   translate-values="{ recipient : transferData.recipient }"></div>
               <div class="col-md-2">
                 <input class="pull-right trans-check" type="checkbox" ng-model="step4Value1">
               </div>
             </div>
             <div class="row">
-              <div class="col-md-9" ng-click="viewAm = !viewAm">{{transferData.amount | currency:"EUR"}}</div>
+              <div class="col-md-9" ng-click="viewAm = !viewAm" translate="TRANSFER3_AMO"
+                   translate-values="{ recipient : transferData.recipient, amount : transferData.amount}"></div>
               <div class="col-md-2">
                 <input class="pull-right trans-check" type="checkbox" ng-model="step4Value2">
               </div>
@@ -292,7 +297,7 @@
   <h4 translate="TRANSFER4_ACTION"></h4>
 
   <div class="well">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading"> {{ 'TRANSFER4_HEADER' | translate}} <span
         class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc4 = !desc4"></span></div>
       <table class="table" ng-show="desc4">
@@ -305,7 +310,7 @@
           <form name="transferPINForm">
             <div class="row">
               <div class="col-md-6">
-                <input type="number" name="PINinput" ng-model="PINinput" class="form-control"
+                <input type="password" name="PINinput" ng-model="PINinput" class="form-control"
                        placeholder="{{ 'TRANSFER4_INPUT' | translate  }}">
               </div>
               <div class="col-md-6"></div>
@@ -333,7 +338,7 @@
   <h4 translate="TRANSFER5_ACTION"></h4>
 
   <div class="well">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading"> {{ 'TRANSFER5_HEADER' | translate}} <span
         class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc5 = !desc5"></span></div>
       <table class="table" ng-show="desc5">
