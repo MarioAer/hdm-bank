@@ -2,7 +2,7 @@
   "hdm_bank_data" : {
 
     "account" : {
-      "balance": "512.11"
+      "balance": "412.11"
     },
 
     "recipients" : [
@@ -14,18 +14,18 @@
         "photo": "julia.jpg"
       },
       {
-        "name" : "Alexander Weber",
-        "accountNumber": "12345",
-        "bankName": "Deutsche Bank",
-        "IBAN": "",
-        "photo": "alexander.jpg"
-      },
-      {
         "name" : "Handy - Telekom",
         "accountNumber": "055165",
         "bankName": "Deutsche Bank",
         "IBAN": "",
         "photo": "cell.png"
+      },
+      {
+        "name" : "Alexander Weber",
+        "accountNumber": "12345",
+        "bankName": "Deutsche Bank",
+        "IBAN": "",
+        "photo": "alexander.jpg"
       },
       {
         "name" : "Strom - EnBW",

@@ -276,9 +276,6 @@ body {
 .trans-check {
 
 }
-.transfer-step2 .bill-group {
-  width: 40%;
-}
 
 /* .squaredFour */
 .squaredFour {
@@ -444,10 +441,23 @@ body {
   list-style: none;
   float: left;
   height: 130px;
-  width: 50%;
+  width: 80%;
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+}
+
+.transfer-step2 .bill-group {
+  width: 80%;
+}
+
+@media (min-width: 500px) {
+  .bill-group {
+    width: 50%;
+  }
+  .transfer-step2 .bill-group {
+    width: 40%;
+  }
 }
 
 .bill-group::nth-child(2n) {
@@ -513,8 +523,21 @@ body {
 }
 
 .color-group {
-  padding-left: 25px;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+
 }
+
+@media(min-width: 500px) {
+  .color-group{
+    display: inline;
+    float: none;
+    padding-left: 25px;
+  }
+}
+
 
 
 body.black-style {
@@ -1102,7 +1125,7 @@ body.black-style {
 
 .black-style .trans-recipient.selected,
 .black-style .trans-recipient:hover {
-  color: #000000;
+  /*color: #000000;*/
   background: #727272;
 }
 
