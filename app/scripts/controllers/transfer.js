@@ -139,7 +139,7 @@ angular.module('swFrontApp')
       $scope.selectedIndex = $index;
       $scope.recipientCheck = false;
       $scope.transferData.recipient = $scope.recipients[$index].name;
-      console.log($scope.transferData.recipient)
+      $scope.transferData.photo = $scope.recipients[$index].photo;
     };
 
     // watches transfer ammount input field for any changes
@@ -189,6 +189,27 @@ angular.module('swFrontApp')
       $scope.getNumber = function(num) {
         return new Array(num);
       }
+
+      $scope.printPage = function() {
+        window.print();
+      }
+
+      $scope.savePage = function () {
+        document.execCommand("SaveAs")
+      }
+
+      $scope.sendEmail = function () {
+        ngDialog.open({
+          template: '<form role="form" ng-submit="close()"> <div class="form-group"> <label for="exampleInput1">Email</label> <input type="text" class="form-control" id="exampleInput1" placeholder="Name"> </div><div class="form-group"> <label for="exampleInput2">Message</label> <input type="text" class="form-control" id="exampleInput2" placeholder="Bank"></div><button type="submit" class="btn btn-default">Submit</button> </form>',
+          plain: true,
+          controller: ['$scope', function($scope) {
+            $scope.close = function () {
+              $scope.closeThisDialog('');
+            }
+          }]
+        });
+      }
+
 
     });
   })

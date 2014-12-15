@@ -240,6 +240,9 @@ body {
   .transfer-screen .col-md-4 {
     padding: 0;
   }
+  .transfer-step3 .trans-recipient {
+    padding-top: 5em;
+  }
 }
 
 /* Transfer */
@@ -253,6 +256,18 @@ body {
 .trans-recipient:hover {
   background: #f4f4f4;
 }
+
+.transfer-step3 .trans-recipient:hover {
+  background: #ffffff;
+}
+
+.transfer-step3 .currency-drawer {
+  border: 1px solid rgb(234, 234, 234);
+  margin-left: 15px;
+  border-radius: 6px;
+  padding-top: 10px;
+}
+
 
 .tras-recipient-pic {
   height: 50px;
@@ -340,78 +355,78 @@ body {
 .fivehundred {
   height: 62px;
   width: 117px;
-  background-image: url('/images/500.jpg');
+  background-image: url('../images/500.jpg');
 }
 
 .hundred{
   height: 65px;
   width: 114px;
-  background-image: url('/images/100.jpg');
+  background-image: url('../images/100.jpg');
 }
 
 .fifty {
   height: 62px;
   width: 113px;
-  background-image: url('/images/50.jpg');
+  background-image: url('../images/50.jpg');
 }
 
 .twenty {
   height: 60px;
   width: 111px;
-  background-image: url('/images/20.jpg');
+  background-image: url('../images/20.jpg');
 }
 
 .ten {
   height: 58px;
   width: 106px;
-  background-image: url('/images/10.jpg');
+  background-image: url('../images/10.jpg');
 }
 .five {
   height: 55px;
   width: 105px;
-  background-image: url('/images/5.jpg');
+  background-image: url('../images/5.jpg');
 }
 
 .two {
   height: 55px;
   width: 55px;
-  background-image: url('/images/2.jpg');
+  background-image: url('../images/2.jpg');
 }
 
 .one {
   height: 50px;
   width: 51px;
-  background-image: url('/images/1.jpg');
+  background-image: url('../images/1.jpg');
 }
 
 .c-fifty {
   height: 46px;
   width: 46px;
-  background-image: url('/images/c-fifty.jpg');
+  background-image: url('../images/c-fifty.jpg');
 }
 
 .c-twenty {
   height: 40px;
   width: 40px;
-  background-image: url('/images/c-twenty.jpg');
+  background-image: url('../images/c-twenty.jpg');
 }
 
 .c-ten {
   height: 39px;
   width: 39px;
-  background-image: url('/images/c-ten.jpg');
+  background-image: url('../images/c-ten.jpg');
 }
 
 .c-five {
   height: 39px;
   width: 39px;
-  background-image: url('/images/c-five.jpg');
+  background-image: url('../images/c-five.jpg');
 }
 
 .c-one {
   height: 37px;
   width: 37px;
-  background-image: url('/images/c-one.jpg');
+  background-image: url('../images/c-one.jpg');
 }
 
 .coins-container {
@@ -460,9 +475,9 @@ body {
   }
 }
 
-.bill-group::nth-child(2n) {
-  clear: both;
-}
+/*.bill-group:nth-child(2n) {*/
+  /*clear: both;*/
+/*}*/
 
 .bill-group li {
   position: absolute;
@@ -1140,3 +1155,6 @@ body.black-style {
   margin: auto;
 }
 
+.dropdown-menu > li > a {
+  padding: 10px 20px;
+}

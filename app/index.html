@@ -30,7 +30,15 @@
   <button type="button" class="sout-btn btn btn-danger navbar-btn pull-right" translate="SIGNOUT">Sign out</button>
   <h3>HdM Bank</h3>
 
-  <nav class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
+  <div class="well visible-print-block" aria-hidden="true" ng-controller="PrintCtrl">
+    <div class="container-fluid">
+      <div class="col-sm-1"> </div>
+      <div class="col-sm-6"> <h4> {{'TRANSFER5_ACTION'|translate}} <h5> {{getDatetime | date:'dd.MM.yyyy - HH:mm'}}</h5> </h4></div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-default hidden-print" role="navigation" ng-controller="NavCtrl">
+
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -64,7 +72,7 @@
   <!-- Angular an anchor point -->
   <div ng-view="" role="main"></div>
 
-  <div class="footer access-bar" role="contentmodification">
+  <div class="footer access-bar hidden-print" role="contentmodification">
     <div class="well well-sm clearfix">
       <div class="pull-left">
         <span class="font-group">Font Size :</span>

@@ -27,7 +27,7 @@ angular
       'SIGNOUT': 'Sign Out',
       // Error
       'ERROR': 'Error',
-      'NAN' : 'Not an acceptable money ammount',
+      'NAN' : 'Please enter a correct money ammount e.g. 99,50',
       'MUCH' : 'Not enough money in account',
       // home
       'HOME_WELCOME': 'Welcome to the HdM Bank Services',
@@ -77,6 +77,7 @@ angular
       'TRANSFER4_HEADER' : 'Security Code',
       'TRANSFER4_DESC' : 'Type your security PIN, the bank has send a PIN Code to you phone',
       'TRANSFER4_INPUT' : 'Type your PIN',
+      'TRANSFER4_NEXT' : 'Transfer money',
       //transfer 5
       'TRANSFER5_ACTION' : 'Transfer : Success',
       'TRANSFER5_HEADER' : 'The information bellow is important',
@@ -99,13 +100,13 @@ angular
       'HELP': 'Hilfe',
       'SIGNOUT': 'Abmelden',
       // Error
-      'ERROR': 'Error',
-      'NAN' : 'Keine gültige Geldsumme',
-      'MUCH' : 'Sie haben nicht so genug Geld auf Ihrem Konto',
+      'ERROR': 'Fehler',
+      'NAN' : 'Bitte geben Sie den Überweisungsbetrag an (z.B. 99,50)',
+      'MUCH' : 'Sie haben nicht genug Geld auf Ihrem Konto',
       // home
       'HOME_WELCOME': 'Willkommen',
-      'HOME_PAUSED': 'Überweisungen zur überprüfung',
-      'HOME_PAUSED_NONE': "Sie haben keine Überweisungen zur Überprüfung",
+      'HOME_PAUSED': 'Überweisungen zur Überprüfung',
+      'HOME_PAUSED_NONE': "Sie haben zurzeit keine Überweisungen zur Überprüfung",
       'HOME_PAUSED_EXIST': "Sie haben {{pausedTrans}} zur Überprüfung Überweisungen",
       // account
       'ACCOUNT_ACTION' : 'Ihrer Kontostand',
@@ -150,6 +151,7 @@ angular
       'TRANSFER4_HEADER' : 'Sicherheit Überprüfung',
       'TRANSFER4_DESC' : 'Sie bekommen per SMS eine PIN, geben Sie diese ein.',
       'TRANSFER4_INPUT' : 'PIN Eingeben',
+      'TRANSFER4_NEXT' : 'Geld überweisen',
       //transfer 5
       'TRANSFER5_ACTION' : 'Überweisung : Bestätigung',
       'TRANSFER5_HEADER' : 'Die Überweisung wurde ausgeführt',

@@ -7,6 +7,8 @@ angular.module('swFrontApp')
       $translate.use(langKey);
     };
 
+
+
   })
   .controller('NavCtrl', function ($scope, $location) {
 
@@ -16,9 +18,14 @@ angular.module('swFrontApp')
       return path === $location.path();
     };
 
-  })
-  .controller('MainCtrl', function ($scope) {
 
+  })
+  .controller('PrintCtrl', ['$scope', function ($scope) {
+
+    $scope.getDatetime = (new Date()).getTime();
+
+  }])
+  .controller('MainCtrl', function ($scope) {
 
 
   });
