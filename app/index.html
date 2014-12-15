@@ -1,17 +1,17 @@
 <!doctype html>
 <html class="no-js">
 
-<head>
+<head >
   <meta charset="utf-8">
   <title>HdM Bank</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="icon" type="image/png" href="/images/icons/account.png">
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css"/>
-  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
+  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -19,7 +19,7 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="swFrontApp">
+<body ng-app="swFrontApp" ng-class="{ 'black-style' : schemeBlack }">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -72,8 +72,10 @@
         <a><span class="acc-font-medium glyphicon glyphicon-font"></span></a>
         <a><span class="acc-font-large glyphicon glyphicon-font"></span></a>
         <span class="color-group">Color Scheme:</span>
-        <a><span class="glyphicon glyphicon-th-large"></span></a>
-        <a><span class="glyphicon glyphicon-th-large"></span></a>
+        <span ng-click="schemeBlack = !schemeBlack">
+          <a><span class="glyphicon glyphicon-th-large"></span></a>
+          <a><span class="glyphicon glyphicon-th-large"></span></a>
+        </span>
       </div>
       <div class="pull-right" ng-controller="LangCtrl">
         <span class="lang-group">Language:</span>

@@ -102,6 +102,10 @@ angular.module('swFrontApp')
 
 
     $scope.nextStepTransfer = function() {
+
+      $scope.pausedTrasfer = false;
+      $scope.cancelWarningMsg = false;
+
       if ($scope.currentTransferElement != 6){
         $scope.transferElements[$scope.currentTransferElement].hide();
         $scope.transferElements[$scope.currentTransferElement+1].show();

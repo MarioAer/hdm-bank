@@ -7,11 +7,11 @@
 
   <div class="form-group">
     <label for="">Password</label>
-    <input type="password" name="password" class="form-control" ng-model="user.password" />
+    <input type="password" name="password" class="form-control" ng-model="user.password"  />
   </div>
 
   <div class="form-group">
-    <button type="submit" name="email" class="btn btn-primary" ng-disabled="check" > Log in </button>
+    <button type="submit" name="email" class="btn btn-primary" ng-disabled="!loginForm.password.$dirty" ng-click="go('/main')"> Log in </button>
   </div>
 
 

@@ -13,6 +13,9 @@ angular
     'pascalprecht.translate',
     'ngDialog'
   ])
+  .config(function ( $httpProvider) {
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  })
   .config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
       // general navigation
@@ -62,8 +65,9 @@ angular
       'TRANSFER3_ACTION' : 'Transfer : Third Step',
       'TRANSFER3_HEADER' : 'Review',
       'TRANSFER3_DESC' : 'Check that every items is right',
+      'TRANSFER3_QUES' : 'Is that right?',
       'TRANSFER3_REP' : 'You want to transfer money to {{recipient}}',
-      'TRANSFER3_AMO' : '{{recipient}} will recieve {{amount | currency:"&euro;"}}',
+      'TRANSFER3_AMO' : '{{recipient}} will recieve {{amount | currency:"EUR"}}',
       'TRANSFER3_PAUSE' : 'Hold transfer </br> Print  a copy for verification',
       'TRANSFER3_PAUSE_MSG' : 'You will be able to finish this transaction later',
       'TRANSFER3_PAUSE_MSG_OK' : 'Save for later',
@@ -77,7 +81,7 @@ angular
       'TRANSFER5_ACTION' : 'Transfer : Success',
       'TRANSFER5_HEADER' : 'The information bellow is important',
       'TRANSFER5_DESC' : 'You have sent the money to the other person',
-      'TRANSFER5_MSG1' : 'Your Transfer was completed : {{recipient}} {{amount | currency:"&euro;"}}',
+      'TRANSFER5_MSG1' : 'Your Transfer was completed : {{recipient}} {{amount | currency:"EUR"}}',
       'TRANSFER5_MSG2' : 'You have so much money left : {{left | currency:"EUR"}}',
       'TRANSFER5_ACTION1' : 'Go to Account',
       'TRANSFER5_ACTIONSEL' : 'Keep conformation',
@@ -96,8 +100,8 @@ angular
       'SIGNOUT': 'Abmelden',
       // Error
       'ERROR': 'Error',
-      'NAN' : 'Nicht eine gültige geld Summe',
-      'MUCH' : 'Sie haben nicht so viel Geld auf Ihrem Konto',
+      'NAN' : 'Keine gültige Geldsumme',
+      'MUCH' : 'Sie haben nicht so genug Geld auf Ihrem Konto',
       // home
       'HOME_WELCOME': 'Willkommen',
       'HOME_PAUSED': 'Überweisungen zur überprüfung',
@@ -134,6 +138,7 @@ angular
       'TRANSFER3_ACTION' : 'Überweisung : Dritter Schritt',
       'TRANSFER3_HEADER' : 'Überprüfung',
       'TRANSFER3_DESC' : 'Überprüfen Sie die Eingaben, wenn ja bestätigen Sie die Eingabe.',
+      'TRANSFER3_QUES' : 'Richtig?',
       'TRANSFER3_REP' : 'Sie möchten an {{recipient}} Geld überweisen',
       'TRANSFER3_AMO' : '{{recipient}} wird von Ihnen {{amount | currency:"&euro;"}} bekommen',
       'TRANSFER3_PAUSE' : 'Noch nicht überweisen. Erst </br> zur Überprüfung ausdrucken',
@@ -150,7 +155,7 @@ angular
       'TRANSFER5_HEADER' : 'Die Überweisung wurde ausgeführt',
       'TRANSFER5_DESC' : 'Die Überweisung wurde ausgeführt, folgende Informationen sind wichtig',
       'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{recipient}} {{amount | currency:"EUR"}}',
-      'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"&euro;"}} auf Ihrem Konto.',
+      'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"EUR"}} auf Ihrem Konto.',
       'TRANSFER5_ACTION1' : 'Zum Kontostand',
       'TRANSFER5_ACTIONSEL' : 'Keep conformation',
       'TRANSFER5_ACTIONSEL1' : 'Bestätigung herunterladen',
@@ -189,5 +194,6 @@ angular
       .otherwise({
         redirectTo: '/'
       })
+
 
   });

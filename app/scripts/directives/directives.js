@@ -14,7 +14,7 @@ angular.module('swFrontApp')
           USD: "$",
           GBP: "£",
           AUD: "$",
-          EUR: "€",
+          EUR: "€ ",
           CAD: "$",
           MIXED: "~"
         },

@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('swFrontApp')
-  .controller('LoginCtrl', function ($scope) {
+  .controller('LoginCtrl', function ($scope, $location) {
 
     $scope.check = true;
+
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
 
     $scope.login = function () {
       if ($scope.loginForm.$valid) {
@@ -11,6 +15,7 @@ angular.module('swFrontApp')
       } else {
         $scope.loginForm.submitted = true;
       }
+
 
 
     }
