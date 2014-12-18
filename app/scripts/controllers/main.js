@@ -27,5 +27,29 @@ angular.module('swFrontApp')
   }])
   .controller('MainCtrl', function ($scope) {
 
+    $scope.schemeBlack = false;
+
+    $scope.font_norm = false;
+    $scope.font_big = false;
+    $scope.font_bigger = false;
+
+    $scope.font_n = function () {
+      $scope.font_norm = true;
+      $scope.font_big = false;
+      $scope.font_bigger = false;
+    }
+    $scope.font_b = function () {
+      $scope.font_norm = false;
+      $scope.font_big = true;
+      $scope.font_bigger = false;
+    }
+    $scope.font_br = function () {
+      $scope.font_norm = false;
+      $scope.font_big = false;
+      $scope.font_bigger = true;
+    }
+
+
+
 
   });

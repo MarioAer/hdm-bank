@@ -156,7 +156,7 @@ angular
       'TRANSFER5_ACTION' : 'Überweisung : Bestätigung',
       'TRANSFER5_HEADER' : 'Die Überweisung wurde ausgeführt',
       'TRANSFER5_DESC' : 'Die Überweisung wurde ausgeführt, folgende Informationen sind wichtig',
-      'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben {{recipient}} {{amount | currency:"EUR"}}',
+      'TRANSFER5_MSG1' : 'Die Überweisung wurde ausgeführt, Sie haben an {{recipient}} {{amount | currency:"EUR"}} überwiesen',
       'TRANSFER5_MSG2' : 'Sie haben jetzt noch {{left | currency:"EUR"}} auf Ihrem Konto.',
       'TRANSFER5_ACTION1' : 'Zum Kontostand',
       'TRANSFER5_ACTIONSEL' : 'Keep conformation',
@@ -165,7 +165,7 @@ angular
       'TRANSFER5_ACTIONSEL3' : 'Bestätigung ausdrucken'
     });
 
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.preferredLanguage('de');
   }])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

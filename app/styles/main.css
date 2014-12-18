@@ -10,6 +10,19 @@ body {
   padding-bottom: 20px;
 }
 
+*,
+body *:focus{
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline-style:none;/*IE*/
+}
+
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing{
@@ -1157,4 +1170,27 @@ body.black-style {
 
 .dropdown-menu > li > a {
   padding: 10px 20px;
+}
+
+
+.color-white {
+  color: #fff;
+}
+
+.color-black {
+  color: #000;
+}
+
+
+
+body.font-n {
+  font-size: 14px;
+}
+
+body.font-b {
+  font-size: 16px;
+}
+
+body.font-br {
+  font-size: 18px;
 }

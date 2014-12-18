@@ -19,7 +19,7 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="swFrontApp" ng-class="{ 'black-style' : schemeBlack }">
+<body ng-app="swFrontApp" ng-controller="MainCtrl" ng-class="{ 'black-style' : schemeBlack, 'font-n' : font_norm, 'font-b' : font_big, 'font-br' : font_bigger }">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -76,13 +76,13 @@
     <div class="well well-sm clearfix">
       <div class="pull-left">
         <span class="font-group">Font Size :</span>
-        <a><span class="acc-font-small glyphicon glyphicon-font"></span></a>
-        <a><span class="acc-font-medium glyphicon glyphicon-font"></span></a>
-        <a><span class="acc-font-large glyphicon glyphicon-font"></span></a>
+        <a ng-click="font_n()"><span class="acc-font-small glyphicon glyphicon-font"></span></a>
+        <a ng-click="font_b()"><span class="acc-font-medium glyphicon glyphicon-font"></span></a>
+        <a ng-click="font_br()"><span class="acc-font-large glyphicon glyphicon-font"></span></a>
         <span class="color-group">Color Scheme:</span>
         <span ng-click="schemeBlack = !schemeBlack">
-          <a><span class="glyphicon glyphicon-th-large"></span></a>
-          <a><span class="glyphicon glyphicon-th-large"></span></a>
+          <a><span class="color-white glyphicon glyphicon-th-large"></span></a>
+          <a><span class="color-black glyphicon glyphicon-th-large"></span></a>
         </span>
       </div>
       <div class="pull-right" ng-controller="LangCtrl">

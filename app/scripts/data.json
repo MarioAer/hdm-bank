@@ -2,7 +2,7 @@
   "hdm_bank_data" : {
 
     "account" : {
-      "balance": "310.05"
+      "balance": "493.45"
     },
 
     "recipients" : [
@@ -14,7 +14,7 @@
         "photo": "julia.jpg"
       },
       {
-        "name" : "Handy - Telekom",
+        "name" : "Telefon - Telekom",
         "accountNumber": "055165",
         "bankName": "Deutsche Bank",
         "IBAN": "",

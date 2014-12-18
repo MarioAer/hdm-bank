@@ -243,7 +243,7 @@
         </table>
         <div class="panel-body">
           <div class="container-fluid">
-            <div class="row">
+            <div class="row hidden-print">
               <div class="col-md-6  currency-drawer">
                 <div class="bills-container">
                   <ul ng-repeat="bill in bills" ng-show="bill.quantity" class="bill-group">
@@ -263,25 +263,25 @@
                 <div class="tras-recipient-name" aria-hidden="true">{{transferData.recipient}}</div>
               </div>
             </div>
-            <div class="row">
+            <div class="row hidden-print">
               <div class="col-md-9"></div>
               <div class="col-md-2 text-center"> {{'TRANSFER3_QUES' | translate}}</div>
             </div>
             <div class="row">
               <div class="col-md-9" translate="TRANSFER3_REP"
                    translate-values="{ recipient : transferData.recipient }"></div>
-              <div class="col-md-2 text-center">
+              <div class="col-md-2 text-center hidden-print">
                 <input class="trans-check" type="checkbox" ng-model="step4Value1">
               </div>
             </div>
             <div class="row">
               <div class="col-md-9" translate="TRANSFER3_AMO"
                    translate-values="{ recipient : transferData.recipient, amount : transferData.amount}"></div>
-              <div class="col-md-2 text-center">
+              <div class="col-md-2 text-center hidden-print">
                 <input class="trans-check" type="checkbox" ng-model="step4Value2">
               </div>
             </div>
-            <div class="row">
+            <div class="row hidden-print">
               <div class="col-md-4 clearfix">
                 <button type="button" class="pull-left btn btn-danger" ng-click="cancelWarning()"
                         translate="TRANSFER_CANCEL"></button>
@@ -322,9 +322,11 @@
           <div class="container-fluid">
             <form name="transferPINForm">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 has-feedback"  ng-class="{ 'has-success' :  PINinput == '1717'}">
                   <input type="password" name="PINinput" ng-model="PINinput" class="form-control"
-                         placeholder="{{ 'TRANSFER4_INPUT' | translate  }}">
+                         placeholder="{{ 'TRANSFER4_INPUT' | translate  }}" aria-describedby="PIN Eingabe">
+                  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="PINinput == '1717'" style="right: 10px;"></span>
+                  <span id="inputSuccess2Status" class="sr-only">(success)</span>
                 </div>
                 <div class="col-md-6"></div>
               </div>
@@ -363,11 +365,12 @@
         <div class="panel-body">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12" translate="TRANSFER5_MSG1"
+              <div class="col-md-2 text-center" style="font-size: xx-large; color: #3c763d"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
+              <div class="col-md-6" translate="TRANSFER5_MSG1"
                    translate-values="{ recipient : transferData.recipient, amount : transferData.amount}"></div>
             </div>
             <div class="row">
-              <div class="col-md-12" translate="TRANSFER5_MSG2" translate-values="{ left : transferData.left }"></div>
+              <div class="col-md-7" translate="TRANSFER5_MSG2" translate-values="{ left : transferData.left }"></div>
             </div>
             <div class="row hidden-print">
               <div class="col-md-4 clearfix">

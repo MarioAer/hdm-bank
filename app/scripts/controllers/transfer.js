@@ -58,6 +58,7 @@ angular.module('swFrontApp')
 
     $scope.stopTransfer = function () {
       $scope.pausedTrasfer = true;
+      window.print();
     }
 
     $scope.cancelWarning = function () {
@@ -161,7 +162,7 @@ angular.module('swFrontApp')
         }
 
 
-        // draw bills function @TODO still not working
+        // draw bills function
         if ($scope.ammountExcedsBalance == false && !$scope.transferAmmountForm.transferAmmountInput.$error.pattern){
           $scope.currency = billDrawer.draw($scope.transAmmountInput);
           var a=0,b=0;
