@@ -75,8 +75,9 @@ angular
       // transfer 4
       'TRANSFER4_ACTION' : 'Transfer : Forth Step',
       'TRANSFER4_HEADER' : 'Security Code',
-      'TRANSFER4_DESC' : 'Type your security PIN, the bank has send a PIN Code to you phone',
-      'TRANSFER4_INPUT' : 'Type your PIN',
+      'TRANSFER4_DESC' : 'Type your security TAN, the bank has send a PIN Code to you phone',
+      'TRANSFER4_MSG' : 'The bank has send a TAN Code to your phone.',
+      'TRANSFER4_INPUT' : 'Type your TAN',
       'TRANSFER4_NEXT' : 'Transfer money',
       //transfer 5
       'TRANSFER5_ACTION' : 'Transfer : Success',
@@ -109,7 +110,7 @@ angular
       'HOME_PAUSED_NONE': "Sie haben zurzeit keine Überweisungen zur Überprüfung",
       'HOME_PAUSED_EXIST': "Sie haben {{pausedTrans}} zur Überprüfung Überweisungen",
       // account
-      'ACCOUNT_ACTION' : 'Ihrer Kontostand',
+      'ACCOUNT_ACTION' : 'Kontostand',
       'BALANCE' : 'Kontostand',
       'BALANCE_DESC' : 'Hier erfahren Sie wie viel Geld Sie in ihrem Konto haben.',
       // transfer
@@ -141,16 +142,17 @@ angular
       'TRANSFER3_DESC' : 'Überprüfen Sie die Eingaben, wenn ja bestätigen Sie die Eingabe.',
       'TRANSFER3_QUES' : 'Richtig?',
       'TRANSFER3_REP' : 'Sie möchten an {{recipient}} Geld überweisen',
-      'TRANSFER3_AMO' : '{{recipient}} wird von Ihnen {{amount | currency:"&euro;"}} bekommen',
+      'TRANSFER3_AMO' : '{{recipient}} wird von Ihnen {{amount | currency:"EUR"}} bekommen',
       'TRANSFER3_PAUSE' : 'Noch nicht überweisen. Erst </br> zur Überprüfung ausdrucken',
       'TRANSFER3_PAUSE_MSG' : 'Die Überweisung wird für später gespeichert',
       'TRANSFER3_PAUSE_MSG_OK' : 'Für später speichern',
       'TRANSFER3_PAUSE_MSG_BAD' : 'Überweisung weiterführen',
       // transfer 4
       'TRANSFER4_ACTION' : 'Überweisung : Letzter Schritt',
-      'TRANSFER4_HEADER' : 'Sicherheit Überprüfung',
-      'TRANSFER4_DESC' : 'Sie bekommen per SMS eine PIN, geben Sie diese ein.',
-      'TRANSFER4_INPUT' : 'PIN Eingeben',
+      'TRANSFER4_HEADER' : 'Geben Sie Ihre TAN ein',
+      'TRANSFER4_DESC' : 'Sie können eine TAN nur einmal verwenden. Sie bekommen per SMS eine PIN, geben Sie diese ein.',
+      'TRANSFER4_MSG' : 'Sie bekommen eine TAN von der Bank als SMS auf Ihr Handy zugeschickt.',
+      'TRANSFER4_INPUT' : 'TAN Eingeben',
       'TRANSFER4_NEXT' : 'Geld überweisen',
       //transfer 5
       'TRANSFER5_ACTION' : 'Überweisung : Bestätigung',

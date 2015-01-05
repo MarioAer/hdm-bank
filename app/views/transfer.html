@@ -50,9 +50,9 @@
   </div>
 
   <div class="transfer-step0">
-    <h4 translate="TRANSFER_ACTION"></h4>
+    <h3 translate="TRANSFER_ACTION"></h3>
 
-    <div class="well">
+    <div>
       <div class="row" ng-show="pausedTrasfer">
         <div class="col-md-12">
           <div class="alert alert-info" role="alert">
@@ -97,9 +97,9 @@
   </div>
   <!-- Step 1 -->
   <div class="transfer-step1" style="display: none;">
-    <h4 translate="TRANSFER1_ACTION"></h4>
+    <h3 translate="TRANSFER1_ACTION"></h3>
 
-    <div class="well">
+    <div>
       <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER1_HEADER' | translate}} <span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc1 = !desc1"></span>
@@ -145,9 +145,9 @@
   </div>
   <!--Step 2 -->
   <div class="transfer-step2" style="display: none;">
-    <h4 translate="TRANSFER2_ACTION"></h4>
+    <h3 translate="TRANSFER2_ACTION"></h3>
 
-    <div class="well">
+    <div>
       <div class="panel panel-primary">
         <div class="panel-heading" translate="TRANSFER2_HEADER"
              translate-values="{ recipient : transferData.recipient}"><span
@@ -230,8 +230,8 @@
   </div>
   <!-- Step 3 -->
   <div class="transfer-step3" style="display: none;">
-    <h4 translate="TRANSFER3_ACTION"></h4>
-    <div class="well">
+    <h3 translate="TRANSFER3_ACTION"></h3>
+    <div>
       <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER3_HEADER' | translate}} <span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc3 = !desc3"></span>
@@ -306,9 +306,9 @@
 
   <!-- Step 4 -->
   <div class="transfer-step4" style="display: none;">
-    <h4 translate="TRANSFER4_ACTION"></h4>
+    <h3 translate="TRANSFER4_ACTION"></h3>
 
-    <div class="well">
+    <div>
       <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER4_HEADER' | translate}} <span
           class="info pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc4 = !desc4"></span>
@@ -322,13 +322,21 @@
           <div class="container-fluid">
             <form name="transferPINForm">
               <div class="row">
+                <div class="col-md-"></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="../images/extras/sms-tan.jpg" height="200px" style="display: block; padding-bottom: 20px; padding-left: 35px;"/>
+                  {{ 'TRANSFER4_MSG' | translate }}
+                </div>
                 <div class="col-md-6 has-feedback"  ng-class="{ 'has-success' :  PINinput == '1717'}">
                   <input type="password" name="PINinput" ng-model="PINinput" class="form-control"
                          placeholder="{{ 'TRANSFER4_INPUT' | translate  }}" aria-describedby="PIN Eingabe">
                   <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="PINinput == '1717'" style="right: 10px;"></span>
                   <span id="inputSuccess2Status" class="sr-only">(success)</span>
                 </div>
-                <div class="col-md-6"></div>
+
               </div>
               <div class="row">
                 <div class="col-md-4 clearfix">
@@ -351,9 +359,9 @@
   </div>
   <!-- Step 5 -->
   <div class="transfer-step5" style="display: none;">
-    <h4 class="hidden-print" translate="TRANSFER5_ACTION"></h4>
+    <h3 class="hidden-print" translate="TRANSFER5_ACTION"></h3>
 
-    <div class="well">
+    <div>
       <div class="panel panel-primary">
         <div class="panel-heading"> {{ 'TRANSFER5_HEADER' | translate}} <span
           class="pull-right glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="desc5 = !desc5"></span></div>
@@ -369,34 +377,41 @@
               <div class="col-md-6" translate="TRANSFER5_MSG1"
                    translate-values="{ recipient : transferData.recipient, amount : transferData.amount}"></div>
             </div>
-            <div class="row">
+            <div class="row visible-print-block">
               <div class="col-md-7" translate="TRANSFER5_MSG2" translate-values="{ left : transferData.left }"></div>
             </div>
             <div class="row hidden-print">
               <div class="col-md-4 clearfix">
-                <div class="dropdown">
-                  <button class="dropdown-menu-left btn btn-default dropdown-toggle" type="button"
-                          data-toggle="dropdown"
-                          aria-expanded="true">
-                    {{'TRANSFER5_ACTIONSEL' | translate}}
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="Transfer actions">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="printPage()"
-                                               aria-label="{{ 'TRANSFER5_ACTIONSEL3' | translate }}"><span
-                      class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTIONSEL3' | translate
-                      }}</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="savePage()"
-                                               aria-label="{{'TRANSFER5_ACTIONSEL1' | translate }}" ><span
-                      class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> {{'TRANSFER5_ACTIONSEL1' |
-                      translate }}</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="sendEmail()"
-                                               aria-label="{{'TRANSFER5_ACTIONSEL2' | translate }}"><span
-                      class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> {{'TRANSFER5_ACTIONSEL2' |
-                      translate
-                      }}</a></li>
-                  </ul>
-                </div>
+                <button type="button" class="pull-right btn btn-primary" aria-label="{{ 'TRANSFER5_ACTIONSEL3' | translate }}" ng-click="printPage()">
+                  <span class="glyphicon glyphicon-print" aria-hidden="true"> </span>
+                  {{ 'TRANSFER5_ACTIONSEL3' | translate }}
+                </button>
+
+                <!--<div class="dropdown">-->
+                  <!--<button class="dropdown-menu-left btn btn-default dropdown-toggle" type="button"-->
+                          <!--aria-label="{{ 'TRANSFER5_ACTIONSEL3' | translate }}"-->
+                          <!--aria-expanded="true">-->
+                    <!--{{'TRANSFER5_ACTIONSEL' | translate}}-->
+                    <!--<span class="caret"></span>-->
+                  <!--</button>-->
+                  <!--<ul class="dropdown-menu" role="menu" aria-labelledby="Transfer actions">-->
+                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" ng-click="printPage()"-->
+                                               <!--aria-label="{{ 'TRANSFER5_ACTIONSEL3' | translate }}"><span-->
+                      <!--class="glyphicon glyphicon-print" aria-hidden="true"></span> {{ 'TRANSFER5_ACTIONSEL3' | translate-->
+                      <!--}}</a></li>-->
+                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" ng-click="savePage()"-->
+                                               <!--aria-label="{{'TRANSFER5_ACTIONSEL1' | translate }}" ><span-->
+                      <!--class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> {{'TRANSFER5_ACTIONSEL1' |-->
+                      <!--translate }}</a></li>-->
+                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" ng-click="sendEmail()"-->
+                                               <!--aria-label="{{'TRANSFER5_ACTIONSEL2' | translate }}"><span-->
+                      <!--class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> {{'TRANSFER5_ACTIONSEL2' |-->
+                      <!--translate-->
+                      <!--}}</a></li>-->
+                  <!--</ul>-->
+                <!--</div>-->
+
+
               </div>
               <div class="col-md-4"></div>
               <div class="col-md-4 clearfix">

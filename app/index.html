@@ -27,8 +27,8 @@
 
 <!-- Add your site or application content here -->
 <div class="container">
-  <button type="button" class="sout-btn btn btn-danger navbar-btn pull-right" translate="SIGNOUT">Sign out</button>
-  <h3>HdM Bank</h3>
+  <button type="button" class="sout-btn btn btn-danger navbar-btn pull-right"><span class="exit_img"></span> {{ "SIGNOUT" | translate }}</button>
+  <h2>HdM Bank</h2>
 
   <div class="well visible-print-block" aria-hidden="true" ng-controller="PrintCtrl">
     <div class="container-fluid">
@@ -69,7 +69,7 @@
     <!-- /.container-fluid -->
   </nav>
 
-  <!-- Angular an anchor point -->
+  <!-- Angular anchor point -->
   <div ng-view="" role="main"></div>
 
   <div class="footer access-bar hidden-print" role="contentmodification">

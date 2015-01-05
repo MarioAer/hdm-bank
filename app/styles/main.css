@@ -23,13 +23,6 @@ body *:focus{
 }
 
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing{
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -116,7 +109,7 @@ body *:focus{
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 830px;
+    max-width: 900px;
   }
 }
 .container-narrow > hr {
@@ -133,13 +126,6 @@ body *:focus{
   padding: 14px 24px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 868px) {
@@ -319,7 +305,6 @@ body *:focus{
   top: 0;
   left: 0;
   background: #fcfff4;
-  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
   background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
   border-radius: 4px;
   box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
@@ -337,7 +322,6 @@ body *:focus{
   background: transparent;
   opacity: 0;
   -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .squaredFour label:hover::after {
@@ -348,6 +332,16 @@ body *:focus{
 }
 .squaredFour input[type=checkbox]:checked + label:after {
   opacity: 1;
+}
+
+.exit_img {
+  display: inline-block;
+  background: url('../images/icons/door_white.png') no-repeat;
+  height: 20px;
+  width: 20px;
+  background-size: 21px;
+  position: absolute;
+  left: 0.3em;
 }
 
 /* Bill Drawer */
@@ -443,9 +437,13 @@ body *:focus{
 }
 
 .coins-container {
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   padding-top: 1em;
   border-top: 1px solid rgb(223, 223, 223);
@@ -489,7 +487,7 @@ body *:focus{
 }
 
 /*.bill-group:nth-child(2n) {*/
-  /*clear: both;*/
+/*clear: both;*/
 /*}*/
 
 .bill-group li {
@@ -534,6 +532,7 @@ body *:focus{
 
 .access-bar a{
   padding: 0 5px;
+  color: #777;
 }
 
 .access-bar a:last-child{
@@ -864,7 +863,6 @@ body.black-style {
 .black-style .btn-link[disabled],
 .black-style fieldset[disabled] .btn-link {
   background-color: transparent;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 .black-style .btn-link,
@@ -943,7 +941,6 @@ body.black-style {
   background-color: #303030;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .black-style .panel-body {
@@ -1157,6 +1154,24 @@ body.black-style {
   background: #727272;
 }
 
+.black-style .navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.black-style .navbar-default .navbar-nav > li.active > a {
+  color: #000;
+}
+
+.black-style .access-bar {
+  color: #fff;
+}
+
+.black-style .access-bar a{
+  padding: 0 5px;
+  color: #fff;
+}
+
+/* minor changes for styling */
 
 .col-md-4 {
   text-align: center;
@@ -1172,7 +1187,6 @@ body.black-style {
   padding: 10px 20px;
 }
 
-
 .color-white {
   color: #fff;
 }
@@ -1181,16 +1195,57 @@ body.black-style {
   color: #000;
 }
 
+/* font control */
 
-
-body.font-n {
-  font-size: 14px;
-}
-
-body.font-b {
+body,
+.btn,
+.form-control {
   font-size: 16px;
 }
 
-body.font-br {
+body.font-n,
+body.font-n .btn,
+body.font-n .form-control{
+  font-size: 16px;
+}
+
+body.font-b,
+body.font-b .btn,
+body.font-b .form-control{
   font-size: 18px;
+}
+
+body.font-br,
+body.font-br .btn,
+body.font-br .form-control{
+  font-size: 20px;
+}
+
+.btn {
+  white-space: normal;
+}
+
+.sout-btn{
+  padding-left: 2em;
+  position: relative;
+}
+
+/* transfer verification checkbox size */
+
+.trans-check {
+  margin: 0 !important;
+  position: absolute;
+
+  zoom:1;
+  transform:scale(2);
+  -ms-transform:scale(2);
+  -webkit-transform:scale(2);
+  -o-transform:scale(2);
+  -moz-transform:scale(2);
+  transform-origin:0 0;
+  -ms-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+  -o-transform-origin:0 0;
+  -moz-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
 }
