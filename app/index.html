@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-default hidden-print" role="navigation" ng-controller="NavCtrl">
+  <nav class="navbar navbar-default hidden-print" id="navbar" role="navigation" ng-controller="NavCtrl">
 
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,7 +53,7 @@
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse" >
         <ul class="nav navbar-nav">
           <li ng-class="{active:isActive('/')}"><a class="text-center" href="#/"><div class="nav-icon nav-home-img" aria-hidden="true"></div> {{'HOME'|translate}} </a></li>
           <li ng-class="{active:isActive('/account')}"><a class="text-center" href="#/account"><div class="nav-icon nav-account-img" aria-hidden="true"></div> {{'ACCOUNT'|translate}}</a></li>
