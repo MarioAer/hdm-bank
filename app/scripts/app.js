@@ -25,6 +25,9 @@ angular
       'ORDER': 'Standing Order',
       'HELP': 'Help',
       'SIGNOUT': 'Sign Out',
+      'FONT' : 'Font Size',
+      'COLOR' : 'Colors',
+      'LANG' : 'Language',
       // Error
       'ERROR': 'Error',
       'NAN' : 'Please enter a correct money ammount e.g. 99,50',
@@ -100,6 +103,9 @@ angular
       'ORDER': 'Dauerauftrag',
       'HELP': 'Hilfe',
       'SIGNOUT': 'Abmelden',
+      'FONT' : 'Schriftgröße',
+      'COLOR' : 'Farbe',
+      'LANG' : 'Sprache',
       // Error
       'ERROR': 'Fehler',
       'NAN' : 'Bitte geben Sie den Überweisungsbetrag an (z.B. 99,50)',

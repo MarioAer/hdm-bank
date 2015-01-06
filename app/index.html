@@ -75,18 +75,18 @@
   <div class="footer access-bar hidden-print" role="contentmodification">
     <div class="well well-sm clearfix">
       <div class="pull-left">
-        <span class="font-group">Font Size :</span>
+        <span class="font-group">{{ 'FONT' | translate }}</span>
         <a ng-click="font_n()"><span class="acc-font-small glyphicon glyphicon-font"></span></a>
         <a ng-click="font_b()"><span class="acc-font-medium glyphicon glyphicon-font"></span></a>
         <a ng-click="font_br()"><span class="acc-font-large glyphicon glyphicon-font"></span></a>
-        <span class="color-group">Color Scheme:</span>
+        <span class="color-group">{{ 'COLOR' | translate }}</span>
         <span ng-click="schemeBlack = !schemeBlack">
           <a><span class="color-white glyphicon glyphicon-th-large"></span></a>
           <a><span class="color-black glyphicon glyphicon-th-large"></span></a>
         </span>
       </div>
       <div class="pull-right" ng-controller="LangCtrl">
-        <span class="lang-group">Language:</span>
+        <span class="lang-group">{{ 'LANG' | translate }}</span>
         <a ng-click="changeLanguage('de')"> DE </a>
         <a ng-click="changeLanguage('en')"> EN </a>
       </div>
