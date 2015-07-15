@@ -116,8 +116,8 @@
                    ng-class="{ selected: $index == selectedIndex }"
                    ng-click="itemClicked($index)">
                 <div class="tras-recipient-pic" aria-hidden="true"
-                     ng-style="{'background-image': 'url(../images/recipients/{{recipient.photo}})'}"></div>
-                <div class="tras-recipient-name" aria-hidden="true">{{recipient.name}}</div>
+                     ng-style="{'background-image': 'url(../images/recipients/{{recipient.recipientPhoto}})'}"></div>
+                <div class="tras-recipient-name" aria-hidden="true">{{recipient.recipientName}}</div>
               </div>
               <div class="col-md-6 trans-recipient" ng-click="addTransferRecipient()">
                 <div class="tras-recipient-pic" aria-hidden="true"
@@ -259,7 +259,7 @@
               <div class="col-md-5 trans-recipient">
                 <div class="tras-recipient-name" aria-hidden="true" style="font-size: xx-large">&rarr;</div>
                 <div class="tras-recipient-pic" aria-hidden="true" ng-repeat="recipient in recipients"
-                     ng-show="transferData.photo == recipient.photo" ng-style="{'background-image': 'url(../images/recipients/{{recipient.photo}})'}"></div>
+                     ng-show="transferData.photo == recipient.photo" ng-style="{'background-image': 'url(../images/recipients/{{recipient.recipientPhoto}})'}"></div>
                 <div class="tras-recipient-name" aria-hidden="true">{{transferData.recipient}}</div>
               </div>
             </div>
@@ -346,7 +346,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4 clearfix">
                   <button type="button" class="pull-right btn btn-default"
-                          ng-class="{'btn-primary' : transferPINForm.PINinput.$dirty}" ng-click="nextStepTransfer()"
+                          ng-class="{'btn-primary' : transferPINForm.PINinput.$dirty}" ng-click="nextStepTransfer();updateAccount();"
                           ng-disabled="!(transferPINForm.PINinput.$valid && transferPINForm.PINinput.$dirty)"
                           translate="TRANSFER4_NEXT"></button>
                 </div>
@@ -357,6 +357,9 @@
       </div>
     </div>
   </div>
+
+
+
   <!-- Step 5 -->
   <div class="transfer-step5" style="display: none;">
     <h3 class="hidden-print" translate="TRANSFER5_ACTION"></h3>

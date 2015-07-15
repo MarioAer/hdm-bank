@@ -8,28 +8,29 @@
  * Controller of the swFrontApp
  */
 angular.module('swFrontApp')
-  .controller('AccountCtrl', function ($scope, $http, billDrawer) {
+  .controller('AccountCtrl', ["$scope","$http","billDrawer", function ($scope, $http, billDrawer) {
 
     angular.element('.sout-btn').show();
 
-    $http.get('/scripts/data.json')
-      .then(function(res){
-        $scope.bankInfo = res.data.hdm_bank_data;
-        $scope.accountBalance = $scope.bankInfo.account.balance;
-        $scope.currency = billDrawer.draw($scope.accountBalance);
-        var a=0,b=0;
+    $scope.accountNumber = 'AC30345897';
+
+    $http.get(  'http://localhost:3000/accounts/' + $scope.accountNumber,
+      { "headers": { "Authorization": "Basic " + btoa("bob" + ":" + "secret") }
+    }).success(function(response) {
+        $scope.accountBalance = parseFloat(response[0].currentBalance)/100;
+        $scope.balanceSorted = billDrawer.draw($scope.accountBalance);
+        var tmp_a = 0, tmp_b = 0;
         $scope.bills = [];
         $scope.coins = [];
-        for (var i = 0; i < $scope.currency.length; i++){
-          if ($scope.currency[i].type == 'bill'){
-            $scope.bills[a] = $scope.currency[i];
-            a++;
-          } else if($scope.currency[i].type == 'coin'){
-            $scope.coins[b] = $scope.currency[i];
-            b++;
+        for (var i = 0; i < $scope.balanceSorted.length; i++){
+          if ($scope.balanceSorted[i].type == 'bill'){
+            $scope.bills[tmp_a] = $scope.balanceSorted[i];
+            tmp_a++;
+          } else if($scope.balanceSorted[i].type == 'coin'){
+            $scope.coins[tmp_b] = $scope.balanceSorted[i];
+            tmp_b++;
           }
         }
-
       });
 
     $scope.getNumber = function(num) {
@@ -37,4 +38,4 @@ angular.module('swFrontApp')
     }
 
 
-  });
+  }]);

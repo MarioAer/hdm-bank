@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('swFrontApp')
-  .controller('LoginCtrl', function ($scope, $location) {
+  .controller('LoginCtrl', ["$scope","$location", function ($scope, $location) {
 
 
     angular.element('#navbar').hide();
@@ -15,4 +15,4 @@ angular.module('swFrontApp')
       angular.element('#navbar').show();
     }
 
-  });
+  }]);

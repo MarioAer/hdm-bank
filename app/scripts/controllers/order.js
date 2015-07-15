@@ -8,7 +8,7 @@
  * Controller of the swFrontApp
  */
 angular.module('swFrontApp')
-  .controller('OrderCtrl', function ($scope) {
+  .controller('OrderCtrl',["$scope", function ($scope) {
 
     angular.element('.sout-btn').show();
 
@@ -17,4 +17,4 @@ angular.module('swFrontApp')
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);

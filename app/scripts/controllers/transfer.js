@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('swFrontApp')
-  .controller('TransferCtrl', function ($scope, $location, $http, ngDialog, billDrawer) {
+  .controller('TransferCtrl',["$scope","$location","$http","ngDialog", "billDrawer", function ($scope, $location, $http, ngDialog, billDrawer) {
 
     $scope.currentTransferElement;
     $scope.recipientCheck = true;
@@ -10,6 +10,9 @@ angular.module('swFrontApp')
     $scope.pausedTrasfer = false;
     $scope.selectedIndex = -1; // Whatever the default selected index is, use -1 for no selection
     $scope.cancelWarningMsg = false;
+
+    $scope.accountNumber = 'AC30345897';
+    $scope.customerID;
 
     $scope.transferElements = [
       angular.element('.transfer-step0'),
@@ -26,13 +29,24 @@ angular.module('swFrontApp')
       left : ''
     }
 
-    // get the account data
-    $http.get('/scripts/data.json')
-      .then(function(res){
-        $scope.bankInfo = res.data.hdm_bank_data;
-        $scope.accoutnBalance = $scope.bankInfo.account.balance;
-        $scope.recipients = $scope.bankInfo.recipients;
-      });
+
+    $http.get(  'http://localhost:3000/accounts/' + $scope.accountNumber,
+      { "headers": { "Authorization": "Basic " + btoa("bob" + ":" + "secret") }
+    })
+    .success(function(response) {
+      $scope.accountBalance = parseFloat(response[0].currentBalance)/100;
+      $scope.customerID = response[0].customerID;
+    })
+    .then(function() {
+      $http.get(  'http://localhost:3000/recipients/customer/' + $scope.customerID,
+        { "headers": { "Authorization": "Basic " + btoa("bob" + ":" + "secret") }
+      })
+      .success(function(response) {
+        $scope.recipients = response;
+      })
+    });
+
+
 
     $scope.go = function ( path ) {
       $location.path( path );
@@ -139,8 +153,8 @@ angular.module('swFrontApp')
     $scope.itemClicked = function ($index) {
       $scope.selectedIndex = $index;
       $scope.recipientCheck = false;
-      $scope.transferData.recipient = $scope.recipients[$index].name;
-      $scope.transferData.photo = $scope.recipients[$index].photo;
+      $scope.transferData.recipient = $scope.recipients[$index].recipientName;
+      $scope.transferData.photo = $scope.recipients[$index].recipientPhoto;
     };
 
     // watches transfer ammount input field for any changes
@@ -155,7 +169,7 @@ angular.module('swFrontApp')
         }
 
         // check if the user has enough money in their account
-        if ($scope.accoutnBalance - $scope.transAmmountInput < 0) {
+        if ($scope.accountBalance - $scope.transAmmountInput < 0) {
           $scope.ammountExcedsBalance = true;
         } else {
           $scope.ammountExcedsBalance = false;
@@ -183,7 +197,7 @@ angular.module('swFrontApp')
         $scope.transferData.amount = $scope.transAmmountInput;
 
         // calculate how much money is left
-        $scope.transferData.left = $scope.accoutnBalance - $scope.transferData.amount;
+        $scope.transferData.left = $scope.accountBalance - $scope.transferData.amount;
 
       }
 
@@ -193,6 +207,15 @@ angular.module('swFrontApp')
 
       $scope.printPage = function() {
         window.print();
+      }
+
+      $scope.updateAccount = function() {
+        $http.get( 'http://localhost:3000/accounts/' + $scope.accountNumber + '/updateBalance/' +  ($scope.transferData.left) * 100,
+          { "headers": { "Authorization": "Basic " + btoa("bob" + ":" + "secret") } }
+        )
+        .success(function( ) {
+          console.log('Account Updated!');
+        })
       }
 
       $scope.savePage = function () {
@@ -213,5 +236,4 @@ angular.module('swFrontApp')
 
 
     });
-  })
-
+  }])

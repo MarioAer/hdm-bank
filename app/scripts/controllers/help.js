@@ -8,11 +8,11 @@
  * Controller of the swFrontApp
  */
 angular.module('swFrontApp')
-  .controller('HelpCtrl', function ($scope) {
+  .controller('HelpCtrl', ["$scope", function ($scope) {
     angular.element('.sout-btn').show();
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);

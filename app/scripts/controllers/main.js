@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('swFrontApp')
-  .controller('LangCtrl', function ($scope, $translate) {
+  .controller('LangCtrl',["$scope", "$translate", function ($scope, $translate) {
 
     $scope.changeLanguage = function (langKey) {
       $translate.use(langKey);
@@ -9,8 +9,8 @@ angular.module('swFrontApp')
 
 
 
-  })
-  .controller('NavCtrl', function ($scope, $location) {
+  }])
+  .controller('NavCtrl',["$scope", "$location", function ($scope, $location) {
 
     angular.element('.sout-btn').show();
 
@@ -19,13 +19,13 @@ angular.module('swFrontApp')
     };
 
 
-  })
+  }])
   .controller('PrintCtrl', ['$scope', function ($scope) {
 
     $scope.getDatetime = (new Date()).getTime();
 
   }])
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl',["$scope", function ($scope) {
 
     $scope.schemeBlack = false;
 
@@ -52,4 +52,4 @@ angular.module('swFrontApp')
 
 
 
-  });
+  }]);
