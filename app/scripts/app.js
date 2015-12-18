@@ -41,6 +41,11 @@ angular
       'ACCOUNT_ACTION' : 'Your current balance',
       'BALANCE' : 'Balance',
       'BALANCE_DESC' : 'Here you will be able to see your current account balance',
+      // standing order / Dauerauftrag 
+      'STANDORDER_ACTION': 'Standing Order',
+      'STANDORDER_HEADER': 'Create a new standing order',
+      'STANDORDER_DESC': 'A standing order is a way of telling your bank that is should transfer some money (always the same amount) to a specific person or organisation on a regular basis (for example, every month).',
+      'STANDORDER_BUTTON_START': 'Start creating a standing order',
       // transfer
       'TRANSFER_ACTION' : 'Transfer',
       'TRANSFER_HEADER' : 'Transferring Money',
@@ -119,6 +124,11 @@ angular
       'ACCOUNT_ACTION' : 'Kontostand',
       'BALANCE' : 'Kontostand',
       'BALANCE_DESC' : 'Hier erfahren Sie wie viel Geld Sie in ihrem Konto haben.',
+      // standing order / Dauerauftrag 
+      'STANDORDER_ACTION': 'Dauerauftrag',
+      'STANDORDER_HEADER': 'Einen neuen Dauerauftrag machen',
+      'STANDORDER_DESC': 'Sie können einen Dauerauftrag einrichten, wenn Sie wollen, dass die Bank zum Beispiel jeden Monat immer den gleichen Betrag an eine bestimmte Person oder Firma bezahlt.',
+      'STANDORDER_BUTTON_START': 'Jetzt einen neuen Dauerauftrag machen',
       // transfer
       'TRANSFER_ACTION' : 'Überweisung',
       'TRANSFER_HEADER' : 'Überweisung durchführen',
