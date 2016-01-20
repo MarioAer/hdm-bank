@@ -49,7 +49,7 @@ angular
       // transfer
       'TRANSFER_ACTION' : 'Transfer',
       'TRANSFER_HEADER' : 'Transferring Money',
-      'TRANSFER_DESC' : 'Making a transfer means that you give part of you money to another person',
+      'TRANSFER_DESC' : 'Making a transfer means that you give part of your money to another person',
       'START_TRANSFER_BUTTON' : 'Start new transfer',
       'TRANSFER_CANCEL' : 'Cancel - Stop Transaction',
       'TRANSFER_CANCEL_MSG' : 'Are you sure that you want to stop this transaction?',
